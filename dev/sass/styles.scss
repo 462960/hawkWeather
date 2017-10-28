@@ -1,0 +1,106 @@
+@import "normalize";
+  
+  body {
+  background-color: #A1C5AA;
+}
+
+li {list-style: none;}
+
+h2 {
+	text-align: center;
+}
+
+.none {display: none;}
+.block {display: block;}
+
+.wrapper {
+	max-width: 350px;
+	margin: 0 auto;
+}
+
+.github {
+  display: block;
+  text-align: center;
+  padding: 15px 0;
+  color: #000;
+}
+
+/* FormInput settings */
+
+form.prod_input {
+  p {
+    text-align: center;
+  }
+  input[type="text"] {
+  width: 100%;
+  background: #90b199;
+  padding: 5px 0 5px;
+}
+}
+
+.checkbox_holder {
+  padding: 10px 0;
+  display: flex;
+  li {
+    flex: 1;
+    padding: 5px;
+    background: #54E438;
+    text-align: center;
+    &:first-child{
+      background: #E73C3C;
+    }
+    &:last-child{
+      background: #4860D8;
+    }
+    input {border: none;}
+  }
+}
+
+
+/* Product items */
+ul.prod_holder {
+  & > li {
+  padding: 5px 5px 5px 20px;
+  height: 20px;
+  transition: box-shadow 0.5s;
+  &:hover {
+   box-shadow: 10px 10px 5px 0px rgba(  144, 177, 153,0.75);
+   border-left: 1px solid #90b199;
+   border-top: 1px solid #90b199;
+    .remove-prod {
+      opacity: 1;
+    }
+  }
+ }
+}
+
+ul.colors_holder {
+  display: flex;
+  float: right;
+  margin-right: 20px;
+  width: 50px;
+  height: 100%;
+  transform: skewX(-35deg);
+  & > li {
+    flex: 1;
+    height: 100%;
+  }
+  & > li.red {background: #E73C3C;}
+  & > li.green {background: #54E438;}
+  & > li.blue {background: #4860D8;}
+}
+
+.remove-prod {
+  background: none;
+  float: right;
+  border: none;
+  line-height: 1;
+  color: #000;
+  opacity: 0;
+  transition: transform 0.5s;
+  margin-top: 2px;
+  &:hover {
+   color: red;
+   transform: rotate(-90deg);
+ }
+}
