@@ -1,11 +1,9 @@
+import axios from 'axios';
 
-export const gitHubApi = (username) => {
-  return fetch(`https://api.github.com/users/${username}`)
-    .then(response => {
-      return response.json()
-        .then(({ login, avatar_url, html_url }) =>  ({ login, avatar_url, html_url }));
-    })
-    .catch(error => {
-      throw error;
-    })
-};
+
+export const gitHubApi = (username) => 
+  axios.get(`https://api.github.com/users/${username}`)
+       .then(res => res.data)
+       .catch(err => console.log('Error:', err));
+
+
