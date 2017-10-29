@@ -4,7 +4,8 @@ const HTMLwebpackPlugin = require('html-webpack-plugin');
 const path = require('path'); 
 
 const config = {
-     entry: __dirname + '/dev/index.js',
+     //entry:['babel-polyfill', __dirname + '/sandbox/index-x.js'],
+     entry:['babel-polyfill', __dirname + '/dev/index.js'],
     output: {
       path: __dirname +  '/dist',
       filename: 'bundle.js'

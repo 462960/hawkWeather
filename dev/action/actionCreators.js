@@ -1,21 +1,31 @@
+
+export const getUserDetails = (payload) => {
+  return {
+    type: 'LOAD_USER_REQUEST',
+    payload
+  }
+}
+
+
+
 // Add product
-let id = 0;
-export function addProduct( name, red, green, blue){
-	return {
-		type: 'ADD_PROD',
-		id: id ++,
-		name,
-		red,
-		green,
-		blue
-	}
-};
+// let id = 0;
+// export function addProduct( name, red, green, blue){
+// 	return {
+// 		type: 'ADD_PROD',
+// 		id: id ++,
+// 		name,
+// 		red,
+// 		green,
+// 		blue
+// 	}
+// };
 
 // Remove product
-export function removeProduct(id, i){
-	return{
-		type: 'REMOVE_PROD',
-		id,
-		i
-	}
-};
+// export function removeProduct(id, i){
+// 	return{
+// 		type: 'REMOVE_PROD',
+// 		id,
+// 		i
+// 	}
+// };

@@ -1,16 +1,22 @@
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import * as actionCreators from '../action/actionCreators';
-import { Main } from './Main';
+import {getUserDetails} from '../action/actionCreators';
+import { UserProfile } from './UserProfile';
 
-function mapStateToProps(state){
-	return {
-     prod: state.goodsList,
-	}
-};
+// function mapStateToProps(state){
+// 	return {
+//      prod: state.goodsList,
+// 	}
+// };
 
-function mapDispatchToProps(dispatch){
-	return bindActionCreators(actionCreators, dispatch)
-};
+const mapStateToProps = (state) => ({ user: state }); 
 
-export const App = connect(mapStateToProps, mapDispatchToProps)(Main);
+// function mapDispatchToProps(dispatch){
+// 	return bindActionCreators(actionCreators, dispatch)
+// };
+
+const mapDispatchToProps = (dispatch) => (
+	{ getUserDetails: (username) => dispatch(getUserDetails(username)) }
+) 
+
+export const App = connect(mapStateToProps, mapDispatchToProps)(UserProfile);
