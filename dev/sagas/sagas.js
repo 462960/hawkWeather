@@ -1,10 +1,10 @@
-import {gitHubApi} from '../helpers/gitHubApi';
+import {getForecast} from '../helpers/api';
 import { put, call } from 'redux-saga/effects'
 import { takeLatest } from 'redux-saga'
 
  function* loadUserDetails({ payload }) {
   try {
-    const user = yield call(gitHubApi, payload);
+    const user = yield call(getForecast, payload);
     // Yields effect to the reducer specifying the action type and user details
     yield put({type: 'LOAD_USER_SUCCESS', user}); 
   } catch (error) {

@@ -33,7 +33,6 @@ export class UserProfile extends React.Component {
             <button onClick={this.handleUserDetail}>Search</button>
             <div>
               <h1> User Profile </h1>
-              <img src={user.avatar_url}/>
               <p><a href={user.html_url} target="_blank">{user.login}</a></p>
             </div>
           </div> : '...loading'}
