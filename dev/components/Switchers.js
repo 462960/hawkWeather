@@ -3,51 +3,32 @@ import DropDownMenu from 'material-ui/DropDownMenu';
 import MenuItem from 'material-ui/MenuItem';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 
-const styles = {
-  customWidth: {
-    width: 200,
-  },
-};
+// const styles = {
+//   customWidth: {
+//     width: 200,
+//   },
+// };
 
-export default class Switchers extends React.Component {
+export const Switchers = (props) =>
 
-  constructor(props) {
-    super(props);
-    this.state = {value: 1};
-  }
-
-  // handleChange = (event, index, value) => this.setState({value});
-  handleChange(e, index, value){
-    return this.setState({value})
-  }
-
-  render() {
-    return (
-      <div>
-          <DropDownMenu 
-          value={this.state.value} 
-          onChange={this.handleChange}
-          >
-           <MenuItem value={1} primaryText="Never" />
-           <MenuItem value={2} primaryText="Every Night" />
-           <MenuItem value={3} primaryText="Weeknights" />
-           <MenuItem value={4} primaryText="Weekends" />
-           <MenuItem value={5} primaryText="Weekly" />
-         </DropDownMenu>
-         <br />
-         <DropDownMenu
-           value={this.state.value}
-           onChange={this.handleChange}
-           style={styles.customWidth}
-           autoWidth={false}
-         >
-           <MenuItem value={1} primaryText="Custom width" />
-           <MenuItem value={2} primaryText="Every Night" />
-           <MenuItem value={3} primaryText="Weeknights" />
-           <MenuItem value={4} primaryText="Weekends" />
-           <MenuItem value={5} primaryText="Weekly" />
-         </DropDownMenu>
-      </div>
-    );
-  }
-}
+          <MuiThemeProvider>
+            <div>
+              <DropDownMenu 
+              value={props.value} 
+              onChange={props.handleChange}
+              >
+               <MenuItem value={1} primaryText="Today" />
+               <MenuItem value={2} primaryText="Tomorrow" />
+               <MenuItem value={3} primaryText="Week" />
+               <MenuItem value={4} primaryText="2 Weeks" />
+              </DropDownMenu>
+                       <br />
+              <DropDownMenu
+               value={props.value}
+               onChange={props.handleChange}
+                       >
+               <MenuItem value={1} primaryText="C&deg;" />
+               <MenuItem value={2} primaryText="F&deg;" />
+              </DropDownMenu>
+            </div>
+          </MuiThemeProvider>

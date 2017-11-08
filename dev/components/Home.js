@@ -1,31 +1,38 @@
 import React from 'react';
 import createReactClass from 'create-react-class';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
-import {TempSwitch} from './TempSwitch';
-import {PeriodSwitch} from './PeriodSwitch';
+//import {TempSwitch} from './TempSwitch';
+//import {PeriodSwitch} from './PeriodSwitch';
 //import TextField from 'material-ui/TextField';
-import Switchers from './Switchers'
+import {SwitchersContainer} from './SwitchersContainer'
+import { ErrorBoundary} from './ErrorBoundary';
 
 
 export const Home = createReactClass({
 	componentDidMount() {
-    this.props.getUserDetails('462960');
+    this.props.getUserDetails('Kosiv');
     console.log(`I'm mounted!!`)
+  },
+  handleInput(e){
+  	e.preventDefault();
+  	const city = this.city.value;
+  	this.props.getUserDetails(city);
+  	//this.handleInput.reset();
+
   },
 	render(){
 		return (
-			<MuiThemeProvider>
-					<Switchers {...this.props}/>
-			</MuiThemeProvider>
+			<ErrorBoundary>
+					<SwitchersContainer {...this.props}/>
+				    {/*<PeriodSwitch {...this.props}/>*/}
+			{/*	<form ref={x => this.inputForm = x} onSubmit={this.handleInput}>
+				<input type="text" ref={x => this.city = x}/>
+				<input type="submit" hidden/>
+				</form>
+				<p>{this.props.user.name}</p>*/}
+			</ErrorBoundary>
 			)
 	}
 })
 
 
-// export const Home = (props) =>
-	
-// 			<div>
-// 				<MuiThemeProvider>
-// 					<Switchers {...props}/>
-// 				</MuiThemeProvider>
-// 			</div>

@@ -5,6 +5,7 @@ const path = require('path');
 
 const config = {
      //entry:['babel-polyfill', __dirname + '/sandbox/index-x.js'],
+     //entry:['babel-polyfill', __dirname + '/sandbox/think-react.js'],
      entry:['babel-polyfill', __dirname + '/dev/index.js'],
     output: {
       path: __dirname +  '/dist',
