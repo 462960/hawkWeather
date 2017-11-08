@@ -1,8 +1,6 @@
 import React from 'react';
 import createReactClass from 'create-react-class';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
-//import {TempSwitch} from './TempSwitch';
-//import {PeriodSwitch} from './PeriodSwitch';
 //import TextField from 'material-ui/TextField';
 import {SwitchersContainer} from './SwitchersContainer'
 import { ErrorBoundary} from './ErrorBoundary';

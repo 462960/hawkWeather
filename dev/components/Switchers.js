@@ -3,19 +3,21 @@ import DropDownMenu from 'material-ui/DropDownMenu';
 import MenuItem from 'material-ui/MenuItem';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 
-// const styles = {
-//   customWidth: {
-//     width: 200,
-//   },
-// };
+const styles = {
+  customWidth: {
+    width: '49%',
+    float: 'left',
+    border: '1px solid red'
+  },
+};
 
 export const Switchers = (props) =>
 
           <MuiThemeProvider>
-            <div>
+            <div style={styles.customWidth}>
               <DropDownMenu 
-              value={props.value} 
-              onChange={props.handleChange}
+              value={props.period} 
+              onChange={props.handlePeriod}
               >
                <MenuItem value={1} primaryText="Today" />
                <MenuItem value={2} primaryText="Tomorrow" />
@@ -24,8 +26,8 @@ export const Switchers = (props) =>
               </DropDownMenu>
                        <br />
               <DropDownMenu
-               value={props.value}
-               onChange={props.handleChange}
+               value={props.temp}
+               onChange={props.handleTemp}
                        >
                <MenuItem value={1} primaryText="C&deg;" />
                <MenuItem value={2} primaryText="F&deg;" />

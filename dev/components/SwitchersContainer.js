@@ -4,25 +4,36 @@ import MenuItem from 'material-ui/MenuItem';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import {Switchers} from './Switchers';
 
-const styles = {
-  customWidth: {
-    width: 200,
-  },
-};
 
 export class SwitchersContainer extends React.Component {
 
   constructor(props) {
     super(props);
-    this.state = {value: 1};
+    this.handleTemp = this.handleTemp.bind(this);
+    this.handlePeriod = this.handlePeriod.bind(this);
+    this.state = {
+      temp: 1,
+      period: 1
+  };
   }
 
-  // handleChange = (event, index, value) => this.setState({value});
-  handleChange(e, index, value){
-    return this.setState({value})
+  handleTemp(e,i,temp){
+    this.setState({temp})
+    console.log(temp)
+  }
+
+   handlePeriod(e,i,period){
+    this.setState({period})
+    console.log(period)
   }
 
   render() {
-    return <Switchers {...this.props} handleChange={this.handleChange} value={this.state.value}/>
+    return <Switchers 
+              {...this.props} 
+              handleTemp={this.handleTemp} 
+              temp={this.state.temp}
+              handlePeriod={this.handlePeriod} 
+              period={this.state.period}
+            />
   }
 }
