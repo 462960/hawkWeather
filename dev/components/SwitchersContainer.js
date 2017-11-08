@@ -4,7 +4,6 @@ import MenuItem from 'material-ui/MenuItem';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import {Switchers} from './Switchers';
 
-
 export class SwitchersContainer extends React.Component {
 
   constructor(props) {
@@ -19,12 +18,12 @@ export class SwitchersContainer extends React.Component {
 
   handleTemp(e,i,temp){
     this.setState({temp})
-    console.log(temp)
+    //console.log(temp)
   }
 
    handlePeriod(e,i,period){
     this.setState({period})
-    console.log(period)
+    //console.log(period)
   }
 
   render() {
