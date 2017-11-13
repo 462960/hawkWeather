@@ -15,7 +15,6 @@ const wrap = (
 	</Provider>
 	);
 
-
 ReactDOM.render(wrap,
 document.querySelector("#app"));
 

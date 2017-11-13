@@ -1,13 +1,16 @@
 import axios from 'axios';
 
-const _baseURL = 'https://api.github.com/users/';
-const _APIKEY = '76c65d2a6d6a1d398c2ecea2ba15d67e';
+//const _baseURL = 'https://api.github.com/users/';
+const _baseURL = 'http://api.openweathermap.org/data/2.5/weather?lat=';
+const _APIKEY = '&appid=76c65d2a6d6a1d398c2ecea2ba15d67e';
 
 
-export const getForecast = (username) => 
+
+
+export const getForecast = (coords) => 
   //axios.get(`https://api.github.com/users/${username}`)
-  axios.get(`http://api.openweathermap.org/data/2.5/weather?q=${username}&appid=76c65d2a6d6a1d398c2ecea2ba15d67e`)
-  //axios.get(_baseURL + username)
+  //axios.get(`http://api.openweathermap.org/data/2.5/weather?q=${username}&appid=76c65d2a6d6a1d398c2ecea2ba15d67e`)
+  axios.get(_baseURL + coords + _APIKEY)
        .then(res => res.data)
        .catch(err => console.log('Error:', err));
 

@@ -12,17 +12,6 @@ export class Home extends React.Component{
 		super(props);
 	}
 
-	componentDidMount() {
-    //this.props.getUserDetails('Kosiv');
-    console.log(`Home mounted!!`)
-  }
-  // handleInput(e){
-  // 	e.preventDefault();
-  // 	const city = this.city.value;
-  // 	this.props.getUserDetails(city);
-  	//this.handleInput.reset();
-
-  //}
 	render(){
 		return (
 			<ErrorBoundary>
