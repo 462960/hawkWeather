@@ -1,27 +1,32 @@
 import React from 'react';
 import createReactClass from 'create-react-class';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
-//import TextField from 'material-ui/TextField';
-import {SwitchersContainer} from './SwitchersContainer';
-import {CityInputContainer} from './CityInputContainer';
-import { ErrorBoundary} from './ErrorBoundary';
+import { SwitchersContainer } from '../containers/SwitchersContainer';
+import { CityInputContainer } from '../containers/CityInputContainer';
+import { ChippoContainer } from '../containers/ChippoContainer';
+import { ErrorBoundary } from './ErrorBoundary';
+import { TopBar } from './TopBar';
 
 
-export class Home extends React.Component{
-	constructor(props){
-		super(props);
-	}
+export class Home extends React.Component {
+  constructor(props) {
+    super(props);
+  }
 
-	render(){
-		return (
-			<ErrorBoundary>
-				<div>
-					<SwitchersContainer {...this.props}/>
-					<CityInputContainer {...this.props}/>
-				</div>
-			</ErrorBoundary>
-			)
-	}
+  render() {
+    return (
+      <div className="wrapper">
+    	<ErrorBoundary>
+    		<TopBar/>
+    		<div className="controls-wrapper">
+    			<SwitchersContainer {...this.props}/>
+    			<CityInputContainer {...this.props}/>
+    			<ChippoContainer {...this.props}/>
+    		</div>
+    	</ErrorBoundary>
+    </div>
+    )
+  }
 }
 
 
