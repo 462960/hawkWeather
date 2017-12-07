@@ -1,59 +1,59 @@
 
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const HTMLwebpackPlugin = require('html-webpack-plugin');
-const path = require('path'); 
+const path = require('path');
 
 const config = {
-     //entry:['babel-polyfill', __dirname + '/sandbox/index-x.js'],
-     //entry:['babel-polyfill', __dirname + '/sandbox/think-react.js'],
-     entry:['babel-polyfill', __dirname + '/dev/index.js'],
-    output: {
-      path: __dirname +  '/dist',
-      filename: 'bundle.js'
-    },
-    devtool: 'source-map',
-    module: {
-        rules: [
-            {
-                test: /\.js$/,
-                use: 'babel-loader',
-                exclude: /(node_modules|bower_components)/,
-          },
-            {
-      test: /\.scss$/,
-      exclude: /(node_modules|bower_components)/,
-      use: ExtractTextPlugin.extract({
-        fallback: "style-loader",
-        // Without map case
-         // use: [
-         //    'css-loader',
-         //    'sass-loader'
-         //    ]
-            use: [
+  //entry: ['babel-polyfill', __dirname + '/sandbox/index-x.js'],
+  entry: ['babel-polyfill', __dirname + '/dev/index.js'],
+  output: {
+    path: __dirname + '/dist',
+    filename: 'bundle.js'
+  },
+  devtool: 'source-map',
+  module: {
+    rules: [
+      {
+        test: /\.js$/,
+        use: 'babel-loader',
+        exclude: /(node_modules|bower_components)/,
+      },
+      {
+        test: /\.scss$/,
+        exclude: /(node_modules|bower_components)/,
+        use: ExtractTextPlugin.extract({
+          fallback: "style-loader",
+          // Without map case
+          // use: [
+          //    'css-loader',
+          //    'sass-loader'
+          //    ]
+          use: [
             'css-loader?sourceMap!',
             'sass-loader?sourceMap!'
-            ]
-      })
-    }
-         ]
-    },
-       plugins: [
-      new ExtractTextPlugin({
+          ]
+        })
+      }
+    ]
+  },
+  plugins: [
+    new ExtractTextPlugin({
       filename: 'styles.css',
-      disable: false, 
-      allChunks: true}), 
-      new HTMLwebpackPlugin({
-        template: './dev/index.template.html',
-        inject: true
-      }),
-    ],
-    resolve: {
-      extensions: ['.js','.jsx','.css', '.scss']
-    },
-     devServer: {
-        compress: false,
-        port: 9909
-    }
+      disable: false,
+      allChunks: true
+    }),
+    new HTMLwebpackPlugin({
+      template: './dev/index.template.html',
+      inject: true
+    }),
+  ],
+  resolve: {
+    extensions: ['.js', '.jsx', '.css', '.scss']
+  },
+  devServer: {
+    compress: false,
+    port: 9909
+  }
 };
 
 module.exports = config;

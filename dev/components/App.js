@@ -8,16 +8,18 @@ import * as actionCreators from '../action/actionCreators';
 
 function mapStateToProps(state) {
   return {
-    chips: state.chipsReducer
+    chips: state.chipsReducer,
+    user: state
   }
 }
 ;
 
 //const mapStateToProps = (state) => ({ user: state }); 
 
-function mapDispatchToProps(dispatch){
-	return bindActionCreators(actionCreators, dispatch)
-};
+function mapDispatchToProps(dispatch) {
+  return bindActionCreators(actionCreators, dispatch)
+}
+;
 
 // const mapDispatchToProps = (dispatch) => (
 // {

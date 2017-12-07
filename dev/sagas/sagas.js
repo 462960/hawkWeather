@@ -5,6 +5,7 @@ import { takeLatest } from 'redux-saga'
  function* loadUserDetails({ payload }) {
   try {
     const user = yield call(getForecast, payload);
+    console.log(user);
     // Yields effect to the reducer specifying the action type and user details
     yield put({type: 'LOAD_USER_SUCCESS', user}); 
   } catch (error) {

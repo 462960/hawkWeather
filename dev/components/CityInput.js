@@ -11,7 +11,7 @@ export const CityInput = (props) => <form action="post" className="city-input"
 									<MuiThemeProvider>
 										<TextField
   onChange={props.cityName}
-  id="field"
+  name="city"
   />
 									</MuiThemeProvider>
 								<input type="submit"  hidden/>

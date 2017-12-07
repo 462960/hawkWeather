@@ -21,7 +21,7 @@ export class Home extends React.Component {
     		<div className="controls-wrapper">
     			<SwitchersContainer {...this.props}/>
     			<CityInputContainer {...this.props}/>
-    			<ChippoContainer {...this.props}/>
+    			{/*<ChippoContainer {...this.props}/>*/}
     		</div>
     	</ErrorBoundary>
     </div>

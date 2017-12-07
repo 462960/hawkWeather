@@ -47,9 +47,9 @@ export class CityInputContainer extends React.Component {
   //--------------------------
   cityName(e) {
     this.setState({
-      name: e.target.value
+      city: e.target.value
     })
-  //console.log();
+  //console.log(this.state.city);
   //this.resetRef.reset();
   }
 
@@ -57,8 +57,8 @@ export class CityInputContainer extends React.Component {
 
   submitName(e) {
     e.preventDefault();
-    this.props.getUserDetails(this.state.name)
-    console.log('I amm submit');
+    this.props.getUserDetails(this.state.city);
+    console.log('I am city submit', this.state.city);
   //console.log(lat,lng)
   //this.resetForm.reset();
   }
