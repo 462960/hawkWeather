@@ -6,7 +6,7 @@ import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 
 export const CityInput = (props) => <form action="post" className="city-input"
   onSubmit={props.submitName}
-  //ref={props.resetRef}
+  ref={props.resetRef}
   >
 									<MuiThemeProvider>
 										<TextField

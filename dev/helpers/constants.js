@@ -1,3 +1,5 @@
 
 export const ADD_CHIP = 'ADD_CHIP';
 export const REMOVE_CHIP = 'REMOVE_CHIP';
+export const LOAD_DATA_REQUEST = 'LOAD_DATA_REQUEST';
+export const LOAD_DATA_SUCCESS = 'LOAD_DATA_SUCCESS';
