@@ -1,6 +1,5 @@
 import axios from 'axios';
 
-//const _baseURL = 'https://api.github.com/users/';
 const _baseURL = 'http://api.openweathermap.org/data/2.5/weather?lat=';
 const _APIKEY = '&appid=76c65d2a6d6a1d398c2ecea2ba15d67e';
 
@@ -8,7 +7,6 @@ const _APIKEY = '&appid=76c65d2a6d6a1d398c2ecea2ba15d67e';
 
 
 export const getForecast = (city) =>
-//axios.get(`https://api.github.com/users/${username}`)
 // By city name
 axios.get(`http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=76c65d2a6d6a1d398c2ecea2ba15d67e`)
   //axios.get(`http://api.openweathermap.org/data/2.5/weather?q=London&appid=76c65d2a6d6a1d398c2ecea2ba15d67e`)

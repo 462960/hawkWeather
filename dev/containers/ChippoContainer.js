@@ -5,10 +5,10 @@ import { Chippo } from '../components/Chippo';
 export class ChippoContainer extends React.Component {
   constructor(props) {
     super(props);
-     this.handleClick = this.handleClick.bind(this);
+     this.handleChipClick = this.handleChipClick.bind(this);
   }
 
-   handleClick() {
+   handleChipClick() {
     console.log('Click!');
   }
 
@@ -18,7 +18,7 @@ export class ChippoContainer extends React.Component {
       key={item.id} 
       item={item} 
       {...this.props}
-      handleClick={this.handleClick}
+      handleChipClick={this.handleChipClick}
       />)
     return (
       <div className="chips-wrap">

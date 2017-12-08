@@ -8,7 +8,7 @@ import { dataReducer } from '../reducers/dataReducer';
 function mapStateToProps(state) {
   return {
     chips: state.chipsReducer,
-    data: state
+    data: state.dataReducer
   }
 };
 

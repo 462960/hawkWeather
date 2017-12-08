@@ -1,5 +1,4 @@
 import React from 'react';
-import createReactClass from 'create-react-class';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import { SwitchersContainer } from '../containers/SwitchersContainer';
 import { CityInputContainer } from '../containers/CityInputContainer';
@@ -21,7 +20,7 @@ export class Home extends React.Component {
     		<div className="controls-wrapper">
     			<SwitchersContainer {...this.props}/>
     			<CityInputContainer {...this.props}/>
-    			{/*<ChippoContainer {...this.props}/>*/}
+    			<ChippoContainer {...this.props}/>
     		</div>
     	</ErrorBoundary>
     </div>
