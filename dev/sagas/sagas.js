@@ -1,10 +1,16 @@
 import { getForecast } from '../helpers/api';
+import { userPosition } from '../helpers/api';
 import { put, call } from 'redux-saga/effects'
 import { takeLatest } from 'redux-saga';
 import { LOAD_DATA_SUCCESS, LOAD_DATA_REQUEST } from '../helpers/constants';
+//import { getCurrentPosition } from 'redux-saga-location';
+//const getCurrentPositon = require('babel-node-modules')([
+//   'redux-saga-location' // add an array of module names here
+// ])
 
 function* loadDataDetails({payload}) {
   try {
+    //const position = yield call(userPosition);
     const data = yield call(getForecast, payload);
     console.log(data);
     // Yields effect to the reducer specifying the action type and data details

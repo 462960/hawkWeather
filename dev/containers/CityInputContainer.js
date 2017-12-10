@@ -10,50 +10,27 @@ export class CityInputContainer extends React.Component {
 
   }
 
-  //       componentDidMount() {
-  //       let lat, lon;
-  //       let bon = true;
-  //     navigator.geolocation.getCurrentPosition(function(loc) {
-  //         lat = loc.coords.latitude;
-  //         lon = loc.coords.longitude;
-  // });
-  //   setTimeout(() => {
-  //    this.setState({
-  //      lat,
-  //      lon
-  //    })
-  //    console.log(this.state.lat, this.state.lon, bon);
-  //    this.props.getUserDetails(`${this.state.lat}&lon=${this.state.lon}`)
-  // }, 1000);
 
-  //     }
+  componentDidMount() {
+    let lat,
+      lon;
+    navigator.geolocation.getCurrentPosition(loc => {
+      this.setState({
+        lat: loc.coords.latitude,
+        lon: loc.coords.longitude
+      });
+    });
+    setTimeout(() => {
+      console.log(`I am DidMount: ${this.state.lat}, ${this.state.lon}`);
+    //this.props.getUserDetails(`${this.state.lat}&lon=${this.state.lon}`)
+    }, 1000);
+  }
 
-  // componentDidMount() {
-  //   let lat,
-  //     lon;
-  //   navigator.geolocation.getCurrentPosition(loc => {
-  //     this.setState({
-  //       lat: loc.coords.latitude,
-  //       lon: loc.coords.longitude
-  //     });
-  //   });
-  //   setTimeout(() => {
-  //     console.log(this.state.lon, this.state.lat);
-  //     this.props.getUserDetails(`${this.state.lat}&lon=${this.state.lon}`)
-  //   }, 1000);
-  // }
-
-
-  //--------------------------
   cityName(e) {
     this.setState({
       city: e.target.value
     })
-  //console.log(this.state.city);
-  //this.resetRef.reset();
   }
-
-  //getCoords(lat, lng){console.log(lat,lng)}
 
   submitName(e) {
     e.preventDefault();
