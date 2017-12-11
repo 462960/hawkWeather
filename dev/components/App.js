@@ -1,14 +1,16 @@
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { Home } from './Home';
-import { chipsReducer } from '../data/chips';
 import * as actionCreators from '../action/actionCreators';
+import { chipsReducer } from '../data/chips';
 import { dataReducer } from '../reducers/dataReducer';
+import { locationReducer } from '../reducers/locationReducer';
 
 function mapStateToProps(state) {
   return {
     chips: state.chipsReducer,
-    data: state.dataReducer
+    data: state.dataReducer,
+    location: state.locationReducer
   }
 };
 

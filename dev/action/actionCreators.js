@@ -1,11 +1,5 @@
 import { v4 } from 'node-uuid';
-import { 
-    ADD_CHIP, 
-    REMOVE_CHIP, 
-    LOAD_DATA_REQUEST, 
-    LOAD_DATA_SUCCESS, 
-    REMOVE_DATA 
-    } from '../helpers/constants';
+import { ADD_CHIP, REMOVE_CHIP, LOAD_DATA_REQUEST } from '../helpers/constants';
 
 export function addChip(city) {
   return {
@@ -29,5 +23,6 @@ export const getData = (payload) => {
     payload
   }
 }
+
 
 

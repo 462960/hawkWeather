@@ -10,22 +10,6 @@ export class CityInputContainer extends React.Component {
 
   }
 
-
-  componentDidMount() {
-    let lat,
-      lon;
-    navigator.geolocation.getCurrentPosition(loc => {
-      this.setState({
-        lat: loc.coords.latitude,
-        lon: loc.coords.longitude
-      });
-    });
-    setTimeout(() => {
-      console.log(`I am DidMount: ${this.state.lat}, ${this.state.lon}`);
-    //this.props.getUserDetails(`${this.state.lat}&lon=${this.state.lon}`)
-    }, 1000);
-  }
-
   cityName(e) {
     this.setState({
       city: e.target.value
@@ -36,7 +20,6 @@ export class CityInputContainer extends React.Component {
     e.preventDefault();
     this.props.getData(this.state.city);
     console.log('I am city submit', this.state.city);
-    //console.log(lat,lng)
     this.resetForm.reset();
   }
 
