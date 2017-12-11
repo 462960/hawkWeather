@@ -2,7 +2,8 @@ import { createStore, compose, applyMiddleware } from 'redux';
 import { rootReducer } from './reducers/rootReducer';
 import { dataReducer } from './reducers/dataReducer';
 import createSagaMiddleware from 'redux-saga';
-import { watchRequest } from './sagas/sagas';
+//import { watchRequest } from './sagas/sagas';
+import { rootSaga } from './sagas/sagas';
 import { chipsReducer } from './data/chips';
 
 const defaultState = {
@@ -19,4 +20,4 @@ const sagaMiddleware = createSagaMiddleware();
 //export const store = createStore(rootReducer, defaultState, enhancers);
 //export const store = createStore(dataReducer, applyMiddleware(sagaMiddleware));
 export const store = createStore(rootReducer, defaultState, applyMiddleware(sagaMiddleware));
-sagaMiddleware.run(watchRequest);
+sagaMiddleware.run(rootSaga);

@@ -21,9 +21,6 @@ axios.get(`http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=76c65d
   .catch(err => console.log('Error:', err));
 
 
-export function userPosition(){
- console.log('I am user Position!');
-}
 
 // export function userPosition(){
 //   let location;
