@@ -1,18 +1,26 @@
 import { getForecast } from '../helpers/api';
 import { put, call, all } from 'redux-saga/effects'
 import { takeLatest } from 'redux-saga';
-import { LOAD_DATA_SUCCESS, LOAD_DATA_REQUEST, LOCATION_REQUEST, LOCATION_SET_POSITION, LOCATION_SET_ERROR } from '../helpers/constants';
+import { v4 } from 'node-uuid';
+import { LOAD_DATA_SUCCESS, LOAD_DATA_REQUEST, LOCATION_REQUEST, LOCATION_SET_POSITION, ADD_CHIP, LOCATION_SET_ERROR } from '../helpers/constants';
 
 
 function* loadDataDetails({payload}) {
   try {
     const data = yield call(getForecast, payload);
-    console.log(data);
+    console.log(data.name);
     // Yields effect to the reducer specifying the action type and data details
     yield put({
       type: LOAD_DATA_SUCCESS,
       data
     });
+    yield put({
+      type: ADD_CHIP,
+      id: v4(),
+      city: data.name,
+      lat: data.coord.lat,
+      lon: data.coord.lon
+    })
   } catch (error) {
     throw error;
   }
