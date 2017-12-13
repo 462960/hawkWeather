@@ -1,4 +1,4 @@
-import { getForecast } from '../helpers/api';
+import { getForecastByName } from '../helpers/api';
 import { put, call, all } from 'redux-saga/effects'
 import { takeLatest } from 'redux-saga';
 import { v4 } from 'node-uuid';
@@ -7,7 +7,7 @@ import { LOAD_DATA_SUCCESS, LOAD_DATA_REQUEST, LOCATION_REQUEST, LOCATION_SET_PO
 
 function* loadDataDetails({payload}) {
   try {
-    const data = yield call(getForecast, payload);
+    const data = yield call(getForecastByName, payload);
     console.log(data.name);
     // Yields effect to the reducer specifying the action type and data details
     yield put({

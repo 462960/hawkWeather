@@ -18,5 +18,9 @@ const sagaMiddleware = createSagaMiddleware();
 //export const store = createStore(rootReducer, defaultState, enhancers);
 //export const store = createStore(dataReducer, applyMiddleware(sagaMiddleware));
 //export const store = createStore(rootReducer, defaultState, applyMiddleware(sagaMiddleware));
-export const store = createStore(rootReducer, persistedState, applyMiddleware(sagaMiddleware));
+export const store = createStore(
+  rootReducer,
+  //persistedState,
+  applyMiddleware(sagaMiddleware)
+);
 sagaMiddleware.run(rootSaga);
