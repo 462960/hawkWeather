@@ -8,14 +8,13 @@ export const CityInput = (props) => <form action="post" className="city-input"
   onSubmit={props.submitName}
   ref={props.resetRef}
   >
-									<MuiThemeProvider>
-										<TextField
+                 <MuiThemeProvider>
+                   <TextField
   onChange={props.cityName}
   name="city"
   />
-									</MuiThemeProvider>
-								<input type="submit"  hidden/>
-								</form>
-
+                 </MuiThemeProvider>
+               <input type="submit"  hidden/>
+               </form>
 
 
