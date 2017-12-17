@@ -6,6 +6,7 @@ export class Chippo extends React.Component {
   constructor(props) {
     super(props);
     this.handleRequestDelete = this.handleRequestDelete.bind(this);
+    this.handleChipClick = this.handleChipClick.bind(this);
   }
 
   handleRequestDelete() {
@@ -14,16 +15,21 @@ export class Chippo extends React.Component {
     removeChip(chips, i);
   }
 
+  handleChipClick() {
+    const {item, chips, getData} = this.props;
+    const i = chips.findIndex(x => x.id == item.id);
+    getData(chips[i].city)
+  }
+
   render() {
-    const {item, handleChipClick} = this.props;
     return (
       <MuiThemeProvider>
                 <Chip
       className="chip"
       onRequestDelete={this.handleRequestDelete}
-      onClick={handleChipClick}
+      onClick={this.handleChipClick}
       >
-           {item.city}
+           {this.props.item.city}
                  </Chip>
              </MuiThemeProvider>
     )
