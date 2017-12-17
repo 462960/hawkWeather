@@ -2,16 +2,10 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 require('./sass/styles');
 import { Provider } from 'react-redux';
-import { store } from './store';
+import { configureStore } from './configureStore';
 import { App } from './components/App';
-import { saveState } from './helpers/localStorage';
-import throttle from 'lodash/throttle';
 
-store.subscribe(throttle(() => {
-  saveState({
-    chipsReducer: store.getState().chipsReducer
-  });
-}, 1000));
+const store = configureStore();
 
 const wrap = (
 <Provider store={store}>
