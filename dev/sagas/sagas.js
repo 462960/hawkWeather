@@ -3,7 +3,7 @@ import { getForecastByName, getForecastByCoords } from '../helpers/api';
 import { put, call, all } from 'redux-saga/effects'
 import { takeLatest } from 'redux-saga';
 import { v4 } from 'node-uuid';
-import { LOAD_DATA_SUCCESS, LOAD_DATA_REQUEST, LOCATION_REQUEST, LOCATION_SET_POSITION, ADD_CHIP, LOCATION_SET_ERROR } from '../helpers/constants';
+import { LOAD_DATA_SUCCESS, LOAD_DATA_REQUEST, ADD_CHIP, LOAD_SET_ERROR } from '../helpers/constants';
 
 
 function* loadDataDetails({payload}) {
@@ -36,19 +36,10 @@ function* getPosition() {
   const {latitude, longitude} = pos.coords;
   // Yields the forecast API by user coordinates
   const data = yield call(getForecastByCoords, latitude, longitude)
-  //console.log(data.weather[0]);
-  //const data = yield JSON.parse(JSON.stringify(result));
   // Yields user's local forecast to the reducer
   yield put({
     type: LOAD_DATA_SUCCESS,
     data
-  });
-  //Yields effect to the reducer specifying the action type and data details
-  //But do I really need a locationReducer??
-  yield put({
-    type: LOCATION_SET_POSITION,
-    latitude,
-    longitude
   });
 }
 
