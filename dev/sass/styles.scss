@@ -36,4 +36,19 @@ $bp-tablet: 450px;
 
  }
 
+ .loader {
+ 	margin: 0 auto;
+ 	width: 60%;
+ 	height: 60%;
+ 	@media(min-width: $bp-tablet){
+ 		width: 150px;
+ 		height: 150px;
+ 	}
+ }
+
+ .weather-icon {
+ 	height: 50px;
+ 	width: 50px;
+ }
+
  

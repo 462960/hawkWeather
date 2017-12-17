@@ -9,7 +9,7 @@ import { LOAD_DATA_SUCCESS, LOAD_DATA_REQUEST, LOCATION_REQUEST, LOCATION_SET_PO
 function* loadDataDetails({payload}) {
   try {
     const data = yield call(getForecastByName, payload);
-    console.log(data.name);
+    console.log(data.id);
     // Yields effect to the reducer specifying the action type and data details
     yield put({
       type: LOAD_DATA_SUCCESS,
@@ -36,18 +36,20 @@ function* getPosition() {
   const {latitude, longitude} = pos.coords;
   // Yields the forecast API by user coordinates
   const data = yield call(getForecastByCoords, latitude, longitude)
+  //console.log(data.weather[0]);
+  //const data = yield JSON.parse(JSON.stringify(result));
   // Yields user's local forecast to the reducer
   yield put({
     type: LOAD_DATA_SUCCESS,
     data
   });
-// Yields effect to the reducer specifying the action type and data details
-// But do I really need a locationReducer??
-// yield put({
-//   type: LOCATION_SET_POSITION,
-//   latitude,
-//   longitude
-// });
+  //Yields effect to the reducer specifying the action type and data details
+  //But do I really need a locationReducer??
+  yield put({
+    type: LOCATION_SET_POSITION,
+    latitude,
+    longitude
+  });
 }
 
 function* watchRequest() {

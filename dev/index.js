@@ -7,10 +7,11 @@ import { App } from './components/App';
 import { saveState } from './helpers/localStorage';
 import throttle from 'lodash/throttle';
 
-// store.subscribe(throttle(() => {
-//   saveState(store.getState());
-// }, 1000));
-
+store.subscribe(throttle(() => {
+  saveState({
+    chipsReducer: store.getState().chipsReducer
+  });
+}, 1000));
 
 const wrap = (
 <Provider store={store}>
