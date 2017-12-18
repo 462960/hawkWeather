@@ -6,6 +6,7 @@ import { ChippoContainer } from '../containers/ChippoContainer';
 import { DayContainer } from '../containers/DayContainer';
 import { ErrorBoundary } from './ErrorBoundary';
 import { TopBar } from './TopBar';
+import { ErrorAlert } from './ErrorAlert';
 
 
 
@@ -28,6 +29,7 @@ export class Home extends React.Component {
       <div className="wrapper">
       <ErrorBoundary>
         <TopBar/>
+        <ErrorAlert error = {this.props.error}/>
         <div className="controls-wrapper">
           <SwitchersContainer {...this.props}/>
           <CityInputContainer {...this.props}/>
