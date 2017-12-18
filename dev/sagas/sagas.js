@@ -3,7 +3,7 @@ import { getForecastByName, getForecastByCoords } from '../helpers/api';
 import { put, call, all, select } from 'redux-saga/effects'
 import { takeLatest, delay } from 'redux-saga';
 import { v4 } from 'node-uuid';
-import { LOAD_DATA_SUCCESS, LOAD_DATA_REQUEST, ADD_CHIP, LOAD_SET_ERROR } from '../helpers/constants';
+import { LOAD_DATA_SUCCESS, LOAD_DATA_REQUEST, ADD_CHIP, LOAD_DATA_ERROR } from '../helpers/constants';
 
 function* loadDataDetails({payload}) {
   const getChips = state => state.chipsReducer;
@@ -27,7 +27,16 @@ function* loadDataDetails({payload}) {
         lon: data.coord.lon
       })
   } catch (error) {
-    throw error;
+    const failed = error ? true : false
+    yield put({
+      type: LOAD_DATA_ERROR,
+      failed
+    });
+    yield call(delay, 2000)
+    yield put({
+      type: LOAD_DATA_ERROR,
+      failed: false
+    });
   }
 }
 
