@@ -18,7 +18,7 @@ export class Chippo extends React.Component {
   handleChipClick() {
     const {item, chips, getData} = this.props;
     const i = chips.findIndex(x => x.id == item.id);
-    getData(chips[i].city)
+    getData(this.props.variant, chips[i].city)
   }
 
   render() {

@@ -18,10 +18,15 @@ export class CityInputContainer extends React.Component {
 
   submitName(e) {
     e.preventDefault();
-    this.props.getData(this.state.city);
+    this.props.getData(this.props.variant, this.state.city);
     console.log('I am city submit', this.state.city);
     this.resetForm.reset();
   }
+
+  /* componentWillReceiveProps(nextProps) {
+     const cityPath = this.props.variant == 'weather' && this.props.data.name;
+     this.props.variant !== nextProps.variant && this.props.getData(nextProps.variant, cityPath)
+   }*/
 
   render() {
     return <CityInput

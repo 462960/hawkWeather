@@ -9,8 +9,8 @@ export const ErrorAlert = ({error}) => <MuiThemeProvider>
           <Dialog
   open={error}
   >
-            <h4>Sorry, request failed...</h4>
-            <p>Check your Internet connection or spelling </p>
+            <h4>Sorry, request delay...</h4>
+            <p>Slow Internet connection or spelling may cause it </p>
           </Dialog>
         </MuiThemeProvider>
 

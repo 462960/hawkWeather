@@ -28,10 +28,10 @@ export class SwitchersContainer extends React.Component {
   }
   ;
 
-  componentWillReceiveProps(nextProps) {
-    this.props.variant !== nextProps.variant && console.log(`Variant: ${nextProps.variant}`)
+  // componentWillReceiveProps(nextProps) {
+  //   this.props.variant !== nextProps.variant && console.log(`Variant: ${nextProps.variant}`)
   //this.props.getData(this.props.data.name)
-  }
+  //}
 
   render() {
     return <Switchers

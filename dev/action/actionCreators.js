@@ -9,10 +9,11 @@ export function removeChip(chips, i) {
   }
 }
 
-export const getData = (payload) => {
+export const getData = (period, city) => {
   return {
     type: LOAD_DATA_REQUEST,
-    payload
+    period, 
+    city
   }
 }
 
