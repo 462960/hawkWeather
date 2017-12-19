@@ -3,7 +3,7 @@ import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import { SwitchersContainer } from '../containers/SwitchersContainer';
 import { CityInputContainer } from '../containers/CityInputContainer';
 import { ChippoContainer } from '../containers/ChippoContainer';
-import { DayContainer } from '../containers/DayContainer';
+import { PresentContainer } from '../containers/PresentContainer';
 import { ErrorBoundary } from './ErrorBoundary';
 import { TopBar } from './TopBar';
 import { ErrorAlert } from './ErrorAlert';
@@ -37,7 +37,7 @@ export class Home extends React.Component {
         </div>
         {this.state.isLoading ?
         <div className="loader"><img  src={'./dev/images/Loading.gif'} alt="Loading"/></div>
-        : <DayContainer {...this.props}/>}
+        : <PresentContainer {...this.props}/>}
       </ErrorBoundary>
     </div>
     )
