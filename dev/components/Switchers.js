@@ -6,13 +6,11 @@ import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 export const Switchers = (props) => <div className="switchers-wrap">
             <MuiThemeProvider>
               <DropDownMenu
-  value={props.period}
+  value={props.variant}
   onChange={props.handlePeriod}
   >
-               <MenuItem value={1} primaryText="Today" />
-               <MenuItem value={2} primaryText="Tomorrow" />
-               <MenuItem value={3} primaryText="Week" />
-               <MenuItem value={4} primaryText="2 Weeks" />
+               <MenuItem value='weather' primaryText="Today" />
+               <MenuItem value='forecast' primaryText="5 days" />
               </DropDownMenu>
             </MuiThemeProvider>
                        <br />

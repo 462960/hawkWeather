@@ -1,5 +1,5 @@
 
-import { REMOVE_CHIP, LOAD_DATA_REQUEST } from '../helpers/constants';
+import { REMOVE_CHIP, LOAD_DATA_REQUEST, SWITCH_FORECAST_LENGTH } from '../helpers/constants';
 
 export function removeChip(chips, i) {
   return {
@@ -14,6 +14,13 @@ export const getData = (payload) => {
     type: LOAD_DATA_REQUEST,
     payload
   }
+}
+
+export const variantData = (variant) => {
+	return {
+		type: SWITCH_FORECAST_LENGTH,
+		variant
+	}
 }
 
 
