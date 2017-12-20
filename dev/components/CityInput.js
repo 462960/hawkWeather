@@ -10,6 +10,7 @@ export const CityInput = (props) => <form action="post" className="city-input"
   >
                  <MuiThemeProvider>
                    <TextField
+  floatingLabelText="City"
   onChange={props.cityName}
   name="city"
   />

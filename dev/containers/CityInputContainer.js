@@ -24,11 +24,13 @@ export class CityInputContainer extends React.Component {
   }
 
   render() {
-    return <CityInput
+    return <div className="city-input-wrapper">
+        <CityInput
       cityName={this.cityName}
       resetRef={el => this.resetForm = el}
       submitName={this.submitName}
       />
+          </div>
 
   }
 }

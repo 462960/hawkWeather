@@ -22,8 +22,10 @@ export class Home extends React.Component {
         <TopBar/>
         <ErrorAlert error = {this.props.error}/>
         <div className="controls-wrapper">
-          <SwitchersContainer {...this.props}/>
-          <CityInputContainer {...this.props}/>
+          <div className="inputs-wrapper">
+            <SwitchersContainer {...this.props}/>
+            <CityInputContainer {...this.props}/>
+          </div>
           <ChippoContainer {...this.props}/>
         </div>
          <PresentContainer {...this.props}/>

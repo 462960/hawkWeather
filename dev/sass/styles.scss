@@ -1,41 +1,57 @@
 @import "normalize";
-/* @import "_add-ones"; */
 
 /* Breakpoints */
 $bp-small: 280px;
 $bp-tablet: 450px;
+$bp-desktop: 850px;
   
  .wrapper {
  	min-width: $bp-small;
  }
 
  .controls-wrapper {
- 	@media(min-width: $bp-tablet){
+	@media(min-width: $bp-desktop){
+		display: flex;
+	}
+ 	.inputs-wrapper {
+ 		.city-input {
+ 		 	 	width: 280px;
+ 		 	 	margin: 0 auto;
+ 		 	 }
+ 		@media(min-width: $bp-tablet){
  		display: flex;
+ 		.city-input-wrapper {
+ 				flex: 4;
+ 		 	 	.city-input {
+ 		 	 	width: 280px;
+ 		 	 	margin: 30px auto;
+ 		 	 }
+ 			
+ 		 	}
+ 	
+ 	 	.switchers-wrap {
+ 	 	flex: .3;
+ 	 }
  	}
- 	.city-input {
- 		flex: 3;
- 	border: 1px solid green;
- }
-
- .switchers-wrap {
- 	flex: .3;
- 	border: 1px solid red;
- }
+ 	@media(min-width: $bp-desktop){
+ 		flex: 2;
+ 	}
+ 	}
 
  .chips-wrap {
- 	flex: 3;
+ 	@media(min-width: $bp-desktop){
+ 		flex: 1;
+ 	}
  	padding: 5px;
  	overflow: hidden;
- 	border: 1px solid #7CE37A;
  	.chip {
  		width: auto;
  		float: left;
  		margin: 0 6px 6px 0 !important;
  	}
  }
-
- }
+}
+ 
 
  .loader {
  	margin: 0 auto;
@@ -51,5 +67,29 @@ $bp-tablet: 450px;
  	height: 50px;
  	width: 50px;
  }
+
+/* DayItem styles */
+ .day-item {
+ 	margin: 5px auto;
+ 	width: 90%;
+ 	& > div {
+ 		padding: 1px 17px 10px;
+ 		@media(min-width: $bp-tablet){
+ 			padding: 10px 15% 20px;
+ 		}
+ }
+ 	h4, h5, h6 {text-align: center;}
+ 	.day-item-description {
+ 		display: flex;
+ 		padding: 10px;
+ 		p {flex: 4;}
+ 		img {flex: 1;}
+ 	}
+ 	@media(min-width: $bp-tablet){
+ 		width: 60%;
+ 	}
+ }
+
+/* WeekContainer styles */
 
  

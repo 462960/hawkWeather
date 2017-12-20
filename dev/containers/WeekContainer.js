@@ -1,4 +1,5 @@
 import React from 'react';
+import { WeekContent } from '../components/WeekContent';
 
 
 export class WeekContainer extends React.Component {
@@ -17,11 +18,11 @@ export class WeekContainer extends React.Component {
 
   render() {
     return (
-      <div>
-    	{this.state.isLoading ?
+      <div className="week-container-wrapper">
+      {this.state.isLoading ?
         <div className="loader"><img  src={'./dev/images/Loading.gif'} alt="Loading"/></div>
-        : <div>I am WeekContainer{this.props.data.city.name}</div>}
-    	</div>
+        : <WeekContent {...this.props}/>}
+      </div>
     )
   }
 }

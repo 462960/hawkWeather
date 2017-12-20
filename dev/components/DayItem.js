@@ -3,44 +3,28 @@ import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import Paper from 'material-ui/Paper';
 import { convertToFahrenheit, convertToCelsius, getDate } from '../helpers/utils';
 
-export class DayItem extends React.Component {
-  constructor(props) {
-    super(props);
-  }
+export const DayItem = ({data, temp}) => {
 
-  render() {
-    const {data, temp} = this.props;
-    const weatherCondition = data.weather.map(item => <div key={item.id}>
-    {item.description}
+  const weatherCondition = data.weather.map(item => <div key={item.id} className="day-item-description">
+    <p>{item.description}</p>
     <img  className="weather-icon" src={`./dev/images/weather-icons/${item.icon}.svg`} alt="weather-icon"/>
-    
     </div>);
-    return (<div>
+
+  return (<div className="day-item">
       
       <MuiThemeProvider>
                       <Paper zDepth={2}>
-                        <div>Today: {data.name}</div>
-                        <div>{getDate(data.dt)}</div>
+                        <h4>{data.name}, {data.sys.country}</h4>
+                        <h6>Today: {getDate(data.dt)}</h6>
                         <div>Temp: {temp == "C" ? `${convertToCelsius(data.main.temp)}°C`
-        : `${convertToFahrenheit(data.main.temp)}°F`}</div>
+      : `${convertToFahrenheit(data.main.temp)}°F`}</div>
+                        <div>Max temp: {temp == "C" ? `${convertToCelsius(data.main.temp_max)}°C`
+      : `${convertToFahrenheit(data.main.temp_max)}°F`}</div>
+                        <div>Min temp: {temp == "C" ? `${convertToCelsius(data.main.temp_min)}°C`
+      : `${convertToFahrenheit(data.main.temp_min)}°F`}</div>
                         {weatherCondition}
                       </Paper>
       </MuiThemeProvider>
     </div>)
-  }
 }
 
-
-// export const DayItem = ({data}) => {
-//   const weatherCondition = data.weather.map(item => <div key={item.id}>
-//    {item.description}
-//    <img  className="weather-icon" src={`./dev/images/weather-icons/${item.icon}.svg`} alt="weather-icon"/>
-//    </div>);
-//   return (<div>
-//     <MuiThemeProvider>
-//                     <Paper zDepth={2}>
-//                     {weatherCondition}
-//                     </Paper>
-//                   </MuiThemeProvider>
-//   </div>)
-// }
