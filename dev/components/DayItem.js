@@ -7,9 +7,11 @@ export const DayItem = ({data}) => {
   	{item.description}
   	<img  className="weather-icon" src={`./dev/images/weather-icons/${item.icon}.svg`} alt="weather-icon"/>
   	</div>);
-  return (<MuiThemeProvider>
-								<Paper zDepth={2}>
-								{weatherCondition}
-								</Paper>
-							</MuiThemeProvider>)
+  return (<div>
+    <MuiThemeProvider>
+                    <Paper zDepth={2}>
+                    {weatherCondition}
+                    </Paper>
+                  </MuiThemeProvider>
+  </div>)
 }

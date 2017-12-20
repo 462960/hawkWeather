@@ -23,11 +23,6 @@ export class CityInputContainer extends React.Component {
     this.resetForm.reset();
   }
 
-  /* componentWillReceiveProps(nextProps) {
-     const cityPath = this.props.variant == 'weather' && this.props.data.name;
-     this.props.variant !== nextProps.variant && this.props.getData(nextProps.variant, cityPath)
-   }*/
-
   render() {
     return <CityInput
       cityName={this.cityName}

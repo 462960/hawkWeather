@@ -13,15 +13,6 @@ import { ErrorAlert } from './ErrorAlert';
 export class Home extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-      isLoading: true
-    };
-  }
-
-  componentWillReceiveProps(nextProps) {
-    (this.props.data !== nextProps.data) && this.setState({
-      isLoading: false
-    })
   }
 
   render() {
@@ -35,9 +26,7 @@ export class Home extends React.Component {
           <CityInputContainer {...this.props}/>
           <ChippoContainer {...this.props}/>
         </div>
-        {this.state.isLoading ?
-        <div className="loader"><img  src={'./dev/images/Loading.gif'} alt="Loading"/></div>
-        : <PresentContainer {...this.props}/>}
+         <PresentContainer {...this.props}/>
       </ErrorBoundary>
     </div>
     )

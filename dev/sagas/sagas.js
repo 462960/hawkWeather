@@ -1,9 +1,9 @@
 
 import { getForecastByName, getForecastByCoords } from '../helpers/api';
-import { put, call, all, select, fork } from 'redux-saga/effects'
+import { put, call, all, select, fork, take } from 'redux-saga/effects'
 import { takeLatest, delay } from 'redux-saga';
 import { v4 } from 'node-uuid';
-import { LOAD_DATA_SUCCESS, LOAD_DATA_REQUEST, ADD_CHIP, LOAD_DATA_ERROR } from '../helpers/constants';
+import { LOAD_DATA_SUCCESS, LOAD_DATA_REQUEST, ADD_CHIP, LOAD_DATA_ERROR, SWITCH_FORECAST_LENGTH } from '../helpers/constants';
 
 function* loadDataDetails({period, city}) {
   const getChips = state => state.chipsReducer;
@@ -20,7 +20,7 @@ function* loadDataDetails({period, city}) {
       type: LOAD_DATA_SUCCESS,
       data
     });
-    // If chip with such a city exists and the opposite variant do nothing
+    // If chip with such a city exists and the opposite variant as well, do nothing
     exists ? null
       : yield put({
         type: ADD_CHIP,
@@ -30,7 +30,35 @@ function* loadDataDetails({period, city}) {
         lon: dataSet.lon
       });
   } catch (error) {
-    const failed = error ? true : false;
+    const failed = error && true;
+    yield put({
+      type: LOAD_DATA_ERROR,
+      failed
+    });
+    yield call(delay, 2000)
+    yield put({
+      type: LOAD_DATA_ERROR,
+      failed: false
+    });
+  }
+}
+
+function* lengthDataReload() {
+  const getExistingCity = state => state.dataReducer;
+  try {
+    while (true) {
+      const variantDispatch = yield take(SWITCH_FORECAST_LENGTH);
+      const cityData = yield select(getExistingCity);
+      const dataSet = (variantDispatch.variant !== 'weather') ? cityData : cityData.city;
+      const data = yield call(getForecastByName, variantDispatch.variant, dataSet.name);
+      yield put({
+        type: LOAD_DATA_SUCCESS,
+        data
+      });
+    }
+
+  } catch (error) {
+    const failed = error && true;
     yield put({
       type: LOAD_DATA_ERROR,
       failed
@@ -66,6 +94,7 @@ function* watchRequest() {
 export function* rootSaga() {
   yield all([
     getPosition(),
+    lengthDataReload(),
     watchRequest()
   ])
 }
