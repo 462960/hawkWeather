@@ -19,8 +19,8 @@ export const Switchers = (props) => <div className="switchers-wrap">
   value={props.temp}
   onChange={props.handleTemp}
   >
-               <MenuItem value={1} primaryText="C&deg;" />
-               <MenuItem value={2} primaryText="F&deg;" />
+               <MenuItem value="C" primaryText="C&deg;" />
+               <MenuItem value="F" primaryText="F&deg;" />
               </DropDownMenu>
               </MuiThemeProvider>
             </div>

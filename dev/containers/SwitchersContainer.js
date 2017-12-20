@@ -10,34 +10,23 @@ export class SwitchersContainer extends React.Component {
     super(props);
     this.handleTemp = this.handleTemp.bind(this);
     this.handlePeriod = this.handlePeriod.bind(this);
-    this.state = {
-      temp: 1,
-    //period: 'weather'
-    };
   }
 
   handleTemp(e, i, temp) {
-    this.setState({
-      temp
-    })
-  //console.log(temp)
+    e.preventDefault();
+    this.props.switchTemp(temp);
   }
 
   handlePeriod(e, i, period) {
+    e.preventDefault();
     this.props.variantData(period);
   }
   ;
-
-  // componentWillReceiveProps(nextProps) {
-  //   this.props.variant !== nextProps.variant && console.log(`Variant: ${nextProps.variant}`)
-  //this.props.getData(this.props.data.name)
-  //}
 
   render() {
     return <Switchers
       {...this.props}
       handleTemp={this.handleTemp}
-      temp={this.state.temp}
       handlePeriod={this.handlePeriod}
       />
   }
