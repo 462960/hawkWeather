@@ -18,7 +18,7 @@ export class WeekContainer extends React.Component {
 
   render() {
     return (
-      <div className="week-container-wrapper">
+      <div>
       {this.state.isLoading ?
         <div className="loader"><img  src={'./dev/images/Loading.gif'} alt="Loading"/></div>
         : <WeekContent {...this.props}/>}
