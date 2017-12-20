@@ -36,6 +36,6 @@ export function convertToCelsius(kelvin) {
 export function getDate(unixTimestamp) {
   let date = new Date(unixTimestamp * 1000);
   let day = daysMap[date.getDay()];
-  let month = `${monthsMap[date.getMonth()]} ${date.getDate()}`;
+  let month = `${monthsMap[date.getMonth()]},${date.getDate()}`;
   return `${day} ${month}`
 }
