@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import DropDownMenu from 'material-ui/DropDownMenu';
 import MenuItem from 'material-ui/MenuItem';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
@@ -30,4 +31,9 @@ export class SwitchersContainer extends React.Component {
       handlePeriod={this.handlePeriod}
       />
   }
+}
+
+SwitchersContainer.propTypes = {
+  switchTemp: PropTypes.func.isRequired,
+  variantData: PropTypes.func.isRequired
 }

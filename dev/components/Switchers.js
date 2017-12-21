@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import DropDownMenu from 'material-ui/DropDownMenu';
 import MenuItem from 'material-ui/MenuItem';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
@@ -24,4 +25,11 @@ export const Switchers = (props) => <div className="switchers-wrap">
               </DropDownMenu>
               </MuiThemeProvider>
             </div>
+
+Switchers.propTypes = {
+  handlePeriod: PropTypes.func.isRequired,
+  handleTemp: PropTypes.func.isRequired,
+  variant: PropTypes.string.isRequired,
+  temp: PropTypes.string.isRequired
+}
 

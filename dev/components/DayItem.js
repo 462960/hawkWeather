@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import Paper from 'material-ui/Paper';
 import { convertToFahrenheit, convertToCelsius, getDate } from '../helpers/utils';
@@ -26,5 +27,10 @@ export const DayItem = ({data, temp}) => {
                       </Paper>
       </MuiThemeProvider>
     </div>)
+}
+
+DayItem.propTypes = {
+  data: PropTypes.object,
+  temp: PropTypes.string
 }
 

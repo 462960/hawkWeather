@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { DayItem } from '../components/DayItem';
 
 
@@ -26,4 +27,8 @@ export class DayContainer extends React.Component {
       </div>
     )
   }
+}
+
+DayContainer.propTypes = {
+  data: PropTypes.object.isRequired
 }

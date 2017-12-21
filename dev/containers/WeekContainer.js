@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { WeekContent } from '../components/WeekContent';
 
 
@@ -25,4 +26,8 @@ export class WeekContainer extends React.Component {
       </div>
     )
   }
+}
+
+WeekContainer.propTypes = {
+  data: PropTypes.object.isRequired
 }

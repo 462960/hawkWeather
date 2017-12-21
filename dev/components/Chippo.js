@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import Chip from 'material-ui/Chip';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 
@@ -34,5 +35,12 @@ export class Chippo extends React.Component {
              </MuiThemeProvider>
     )
   }
+}
+
+Chippo.propTypes = {
+  item: PropTypes.object.isRequired,
+  getData: PropTypes.func.isRequired,
+  removeChip: PropTypes.func.isRequired,
+  chips: PropTypes.array
 }
 

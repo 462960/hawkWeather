@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { CityInput } from '../components/CityInput';
 
 
@@ -19,7 +20,6 @@ export class CityInputContainer extends React.Component {
   submitName(e) {
     e.preventDefault();
     this.props.getData(this.props.variant, this.state.city);
-    console.log('I am city submit', this.state.city);
     this.resetForm.reset();
   }
 
@@ -33,5 +33,10 @@ export class CityInputContainer extends React.Component {
           </div>
 
   }
+}
+
+CityInputContainer.propTypes = {
+  data: PropTypes.object.isRequired,
+  getData: PropTypes.func.isRequired
 }
 
