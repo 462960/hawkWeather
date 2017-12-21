@@ -9,7 +9,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "none"
+    "url": "https://github.com/462960/hawkWeather"
   },
   "author": "Vlad",
   "license": "ISC",
@@ -43,7 +43,6 @@
     "axios": "^0.17.0",
     "lodash": "^4.17.4",
     "material-ui": "^0.19.4",
-    "material-ui-autocomplete-google-places": "^2.2.0",
     "node-uuid": "^1.4.8",
     "react": "^16.1.0",
     "react-addons-css-transition-group": "^15.6.2",

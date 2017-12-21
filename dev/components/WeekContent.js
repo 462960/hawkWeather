@@ -7,7 +7,7 @@ import { convertToFahrenheit, convertToCelsius, getDate } from '../helpers/utils
 
 export const WeekContent = ({data, temp}) => {
   const weatherSlice = data.list.map(item => <div key={item.dt} className="week-content-item">
-		<MuiThemeProvider>
+		<MuiThemeProvider >
 			<Paper zDepth={2}>
 				<h6>{item.dt_txt}</h6>
                         <div>Temp: {temp == "C" ? `${convertToCelsius(item.main.temp)}°C`
@@ -36,7 +36,3 @@ WeekContent.propTypes = {
   temp: PropTypes.string.isRequired
 }
 
-/*const weatherCondition = data.weather.map(item => <div key={item.id} className="day-item-description">
-    <p>{item.description}</p>
-    <img  className="weather-icon" src={`./dev/images/weather-icons/${item.icon}.svg`} alt="weather-icon"/>
-    </div>);*/

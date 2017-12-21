@@ -1,8 +1,8 @@
+
 import React from 'react';
 import PropTypes from 'prop-types';
 import TextField from 'material-ui/TextField';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
-//import GooglePlaceAutocomplete from 'material-ui-autocomplete-google-places';
 
 
 export const CityInput = ({submitName, resetRef, cityName}) => <form action="post" className="city-input"

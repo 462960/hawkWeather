@@ -33,9 +33,11 @@ export function convertToCelsius(kelvin) {
   return (kelvin - 273.15).toFixed(1);
 }
 
+// Get the date out of Unix time stamp 
 export function getDate(unixTimestamp) {
   let date = new Date(unixTimestamp * 1000);
   let day = daysMap[date.getDay()];
   let month = `${monthsMap[date.getMonth()]},${date.getDate()}`;
   return `${day} ${month}`
 }
+
