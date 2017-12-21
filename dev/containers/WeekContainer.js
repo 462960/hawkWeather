@@ -21,7 +21,7 @@ export class WeekContainer extends React.Component {
     return (
       <div>
       {this.state.isLoading ?
-        <div className="loader"><img  src={'./dev/images/Loading.gif'} alt="Loading"/></div>
+        <div className="loader"><img  src={'https://weather.skepton.ru/images/Loading.gif'} alt="Loading"/></div>
         : <WeekContent {...this.props}/>}
       </div>
     )

@@ -15,7 +15,11 @@ export const WeekContent = ({data, temp}) => {
                         <div>Max temp: {temp == "C" ? `${convertToCelsius(item.main.temp_max)}°C`
       : `${convertToFahrenheit(item.main.temp_max)}°F`}</div>
                         <div>Min temp: {temp == "C" ? `${convertToCelsius(item.main.temp_min)}°C`
-      : `${convertToFahrenheit(item.main.temp_min)}°F`}</div>				
+      : `${convertToFahrenheit(item.main.temp_min)}°F`}</div>
+      {item.weather.map(x => <div key={x.id} className="item-description">
+    <p>{x.description}</p>
+    <img  className="weather-icon" src={`https://weather.skepton.ru/images/weather-icons/${x.icon}.svg`} alt="weather-icon"/>
+    </div>)}				
 			</Paper>
 		</MuiThemeProvider>
 		</div>)
@@ -31,3 +35,8 @@ WeekContent.propTypes = {
   data: PropTypes.object.isRequired,
   temp: PropTypes.string.isRequired
 }
+
+/*const weatherCondition = data.weather.map(item => <div key={item.id} className="day-item-description">
+    <p>{item.description}</p>
+    <img  className="weather-icon" src={`./dev/images/weather-icons/${item.icon}.svg`} alt="weather-icon"/>
+    </div>);*/
