@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 import { Chippo } from '../components/Chippo';
 
 
@@ -13,7 +14,12 @@ export const ChippoContainer = (props) => {
 
   return (
     <div className="chips-wrap">
+     <ReactCSSTransitionGroup
+    transitionName="chippo"
+    transitionEnterTimeout={500}
+    transitionLeaveTimeout={300}>
       {chippoUnits}
+      </ReactCSSTransitionGroup>
       </div>
   )
 }

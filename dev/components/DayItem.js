@@ -6,9 +6,9 @@ import { convertToFahrenheit, convertToCelsius, getDate } from '../helpers/utils
 
 export const DayItem = ({data, temp}) => {
 
-  const weatherCondition = data.weather.map(item => <div key={item.id} className="day-item-description">
+  const weatherCondition = data.weather.map(item => <div key={item.id} className="item-description">
     <p>{item.description}</p>
-    <img  className="weather-icon" src={`./dev/images/weather-icons/${item.icon}.svg`} alt="weather-icon"/>
+    <img  className="weather-icon" src={`https://weather.skepton.ru/images/weather-icons/${item.icon}.svg`} alt="weather-icon"/>
     </div>);
 
   return (<div className="day-item">
