@@ -73,26 +73,51 @@ $bp-desktop: 850px;
 /* DayItem styles */
  .day-item {
  	margin: 5px auto;
- 	width: 90%;
+ 	width: 95%;
  	& > div {
  		padding: 1px 17px 10px;
  		@media(min-width: $bp-tablet){
- 			padding: 10px 15% 20px;
+ 			padding: 10px 10px 20px;
  		}
  }
  	h4, h5, h6 {text-align: center;}
  	
  	@media(min-width: $bp-tablet){
- 		width: 60%;
+ 		width: 80%;
  	}
  }
 
  .item-description {
- 		display: flex;
- 		padding: 10px;
- 		p {flex: 4;}
- 		img {flex: 1;}
+ 		overflow: hidden;
+ 		padding: 10px 0;
+ 		p {float: left}
+ 		img {
+ 			float: right;
+ 			width: 116px;
+ 		}
  	}
+
+ .temp-wind-wrapper {
+ 	 overflow: hidden; 
+ 	
+ 	.temp-holder {
+ 		float: left;
+ 		width: 50%;
+ 		border-right: 1px solid #E4EAEB;
+ 		padding-right: 20px;
+ 		& > div{
+ 		overflow: hidden;
+ 		padding-bottom: 5px;
+ 		div {float: left;}
+ 		span {float: right;}
+ 	}
+ 	}
+ 	.wind-holder {
+ 		float: right;
+ 		width: 100px;
+ 		div {text-align: center;}
+ 	}
+ }
 
 /* WeekContainer styles */
 .week-content-wrapper {

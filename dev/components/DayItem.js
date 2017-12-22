@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import Paper from 'material-ui/Paper';
-import { convertToFahrenheit, convertToCelsius, getDate } from '../helpers/utils';
+import { convertToFahrenheit, convertToCelsius, getDate, getTime } from '../helpers/utils';
 
 export const DayItem = ({data, temp}) => {
 
@@ -10,6 +10,17 @@ export const DayItem = ({data, temp}) => {
     <p>{item.description}</p>
     <img  className="weather-icon" src={`https://weather.skepton.ru/images/weather-icons/${item.icon}.svg`} alt="weather-icon"/>
     </div>);
+  const night = getTime(data.dt) > 8 && getTime(data.dt) < 18;
+  const arrowColor = night ? "black" : "white";
+  const windDirection = data.wind.deg;
+  const divStyle = {
+    background: `url(/dev/images/arrow-${arrowColor}.png)`,
+    transform: `rotate(${windDirection}deg)`,
+    borderRadius: "50%",
+    marginLeft: 20,
+    height: 50,
+    width: 50
+  }
 
   return (<div className="day-item">
       
@@ -17,12 +28,27 @@ export const DayItem = ({data, temp}) => {
                       <Paper zDepth={2}>
                         <h4>{data.name}, {data.sys.country}</h4>
                         <h6>Today: {getDate(data.dt)}</h6>
-                        <div>Temp: {temp == "C" ? `${convertToCelsius(data.main.temp)}°C`
-      : `${convertToFahrenheit(data.main.temp)}°F`}</div>
-                        <div>Max temp: {temp == "C" ? `${convertToCelsius(data.main.temp_max)}°C`
-      : `${convertToFahrenheit(data.main.temp_max)}°F`}</div>
-                        <div>Min temp: {temp == "C" ? `${convertToCelsius(data.main.temp_min)}°C`
-      : `${convertToFahrenheit(data.main.temp_min)}°F`}</div>
+                        <div className="temp-wind-wrapper">
+                          <div className="temp-holder">
+                            <div>
+                              <div>Temp: </div><span>{temp == "C" ? `${convertToCelsius(data.main.temp)}°C`
+                                    : `${convertToFahrenheit(data.main.temp)}°F`}</span>
+                            </div>
+                            <div>
+                              <div>Max temp: </div><span>{temp == "C" ? `${convertToCelsius(data.main.temp_max)}°C`
+                                    : `${convertToFahrenheit(data.main.temp_max)}°F`}</span>
+                            </div>
+                            <div>
+                              <div>Min temp: </div><span>{temp == "C" ? `${convertToCelsius(data.main.temp_min)}°C`
+                                    : `${convertToFahrenheit(data.main.temp_min)}°F`}</span>
+                            </div>
+                          </div>
+                          <div className="wind-holder">
+                           <div>Wind: {data.wind.speed}m</div>
+                              <div style={divStyle}>
+                                                       </div>
+                           </div>
+                        </div>
                         {weatherCondition}
                       </Paper>
       </MuiThemeProvider>

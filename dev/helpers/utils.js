@@ -41,3 +41,10 @@ export function getDate(unixTimestamp) {
   return `${day} ${month}`
 }
 
+export function getTime(unixTimestamp) {
+  const date = new Date(unixTimestamp * 1000);
+  const hours = date.getHours();
+  return hours;
+}
+
+
