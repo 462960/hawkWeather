@@ -13,7 +13,7 @@ export const WeekContent = ({data, temp}) => {
     const arrowColor = night ? "black" : "white";
     const windDirection = item.wind.deg;
     const divStyle = {
-      background: `url(/dev/images/arrow-${arrowColor}.png)`,
+      background: `url(/images/arrow-${arrowColor}.png)`,
       transform: `rotate(${windDirection}deg)`,
       borderRadius: "50%",
       marginLeft: 20,
@@ -49,7 +49,7 @@ export const WeekContent = ({data, temp}) => {
                         </div>
       {item.weather.map(x => <div key={x.id} className="item-description">
     <p>{x.description}</p>
-    <img  className="weather-icon" src={`https://weather.skepton.ru/images/weather-icons/${x.icon}.svg`} alt="weather-icon"/>
+    <img  className="weather-icon" src={`/images/weather-icons/${x.icon}.svg`} alt="weather-icon"/>
     </div>)}        
       </Paper>
     </MuiThemeProvider>

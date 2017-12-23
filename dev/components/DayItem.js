@@ -8,13 +8,13 @@ export const DayItem = ({data, temp}) => {
 
   const weatherCondition = data.weather.map(item => <div key={item.id} className="item-description">
     <p>{item.description}</p>
-    <img  className="weather-icon" src={`https://weather.skepton.ru/images/weather-icons/${item.icon}.svg`} alt="weather-icon"/>
+    <img  className="weather-icon" src={`/images/weather-icons/${item.icon}.svg`} alt="weather-icon"/>
     </div>);
   const night = getTime(data.dt) > 8 && getTime(data.dt) < 18;
   const arrowColor = night ? "black" : "white";
   const windDirection = data.wind.deg;
   const divStyle = {
-    background: `url(/dev/images/arrow-${arrowColor}.png)`,
+    background: `url(/images/arrow-${arrowColor}.png)`,
     transform: `rotate(${windDirection}deg)`,
     borderRadius: "50%",
     marginLeft: 20,

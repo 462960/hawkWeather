@@ -22,7 +22,7 @@ export class DayContainer extends React.Component {
     return (
       <div>
         {this.state.isLoading ?
-        <div className="loader"><img  src={'https://weather.skepton.ru/images/Loading.gif'} alt="Loading"/></div>
+        <div className="loader"><img  src={'/images/Loading.gif'} alt="Loading"/></div>
         : <DayItem {...this.props}/>}
       </div>
     )

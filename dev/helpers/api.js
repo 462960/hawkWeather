@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const _baseURL = 'https://api.openweathermap.org/data/2.5/';
-const _APIKEY = '&appid=76c65d2a6d6a1d398c2ecea2ba15d67e';
+const _APIKEY = '&appid=XXXXXXXXXXXXXXXXXXXXXXXXXX';
 
 export const getForecastByName = (variant, city) => axios.get(`${_baseURL}${variant}?q=${city}${_APIKEY}`)
   .then(res => res.data)
