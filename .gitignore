@@ -54,4 +54,5 @@ webpack-bundle-analyzer-DEV-report.html
 sandbox
 README.mdn
 dev/images
+.env
 

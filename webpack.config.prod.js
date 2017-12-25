@@ -2,8 +2,10 @@
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const HTMLwebpackPlugin = require('html-webpack-plugin');
 const UglyJS = require('uglify-js-plugin');
+const Dotenv = require('dotenv-webpack');
 const webpack = require('webpack');
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
+
 
 const config = {
      entry: ['babel-polyfill', __dirname + '/dev/index.js'],
@@ -32,7 +34,6 @@ const config = {
          ]
     },
        plugins: [
-     // new ExtractTextPlugin({filename: 'dist/styles/styles.css', allChunks: true}), 
       new HTMLwebpackPlugin({
         template: './dev/index.template.html',
         inject: true
@@ -44,7 +45,10 @@ const config = {
      }),
         new BundleAnalyzerPlugin({
        analyzerMode: 'static'
-     })
+     }),
+        new Dotenv({
+        path: './.env'
+    })
     ],
     resolve: {
       extensions: ['.js','.jsx','.css', '.scss']

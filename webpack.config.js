@@ -2,6 +2,7 @@
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const HTMLwebpackPlugin = require('html-webpack-plugin');
 const path = require('path');
+const Dotenv = require('dotenv-webpack');
 
 const config = {
   entry: ['babel-polyfill', __dirname + '/dev/index.js'],
@@ -22,11 +23,6 @@ const config = {
         exclude: /(node_modules|bower_components)/,
         use: ExtractTextPlugin.extract({
           fallback: "style-loader",
-          // Without map case
-          // use: [
-          //    'css-loader',
-          //    'sass-loader'
-          //    ]
           use: [
             'css-loader?sourceMap!',
             'sass-loader?sourceMap!'
@@ -45,6 +41,9 @@ const config = {
       template: './dev/index.template.html',
       inject: true
     }),
+    new Dotenv({
+      path: './.env'
+    })
   ],
   resolve: {
     extensions: ['.js', '.jsx', '.css', '.scss']

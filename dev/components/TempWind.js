@@ -1,13 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { convertToFahrenheit, convertToCelsius, getDate, getTime } from '../helpers/utils';
+const isDev = process.env.NODE_ENV == 'dev'
 
 export const TempWind = ({info, temp}) => {
   const night = getTime(info.dt) > 8 && getTime(info.dt) < 18;
   const arrowColor = night ? "black" : "white";
   const windDirection = info.wind.deg;
   const divStyle = {
-    background: `url(/dev/images/arrow-${arrowColor}.png)`,
+    background: isDev ? `url(https://weather.skepton.ru/images/arrow-${arrowColor}.png)` : `url(/images/arrow-${arrowColor}.png)`,
     transform: `rotate(${windDirection}deg)`,
     borderRadius: "50%",
     marginLeft: 20,

@@ -6,13 +6,14 @@ import darkBaseTheme from 'material-ui/styles/baseThemes/darkBaseTheme'
 import Paper from 'material-ui/Paper';
 import { getTime } from '../helpers/utils';
 import { TempWind } from './TempWind';
+const isDev = process.env.NODE_ENV == 'dev'
 
 
 export const WeekContent = ({data, temp}) => {
 
-    const weatherSlice = data.list.map(item => {
+  const weatherSlice = data.list.map(item => {
     const night = getTime(item.dt) > 8 && getTime(item.dt) < 18;
-    
+
     return (
       <div key={item.dt} className="week-content-item">
             <MuiThemeProvider muiTheme={getMuiTheme(night ? 'null' : darkBaseTheme)}>
@@ -21,7 +22,7 @@ export const WeekContent = ({data, temp}) => {
                 <TempWind info={item} temp={temp}/>
                 {item.weather.map(x => <div key={x.id} className="item-description">
                     <p>{x.description}</p>
-                    <img  className="weather-icon" src={`https://weather.skepton.ru/images/weather-icons/${x.icon}.svg`} alt="weather-icon"/>
+                    <img  className="weather-icon" src={isDev ? `https://weather.skepton.ru/images/weather-icons/${x.icon}.svg` : `/images/weather-icons/${x.icon}.svg`} alt="weather-icon"/>
                   </div>)}        
               </Paper>
             </MuiThemeProvider>

@@ -4,12 +4,13 @@ import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import Paper from 'material-ui/Paper';
 import { getDate } from '../helpers/utils';
 import { TempWind } from './TempWind';
+const isDev = process.env.NODE_ENV == 'dev'
 
 export const DayItem = ({data, temp}) => {
 
   const weatherCondition = data.weather.map(item => <div key={item.id} className="item-description">
     <p>{item.description}</p>
-    <img  className="weather-icon" src={`https://weather.skepton.ru/images/weather-icons/${item.icon}.svg`} alt="weather-icon"/>
+    <img  className="weather-icon" src={isDev ? `https://weather.skepton.ru/images/weather-icons/${item.icon}.svg` : `/images/weather-icons/${item.icon}.svg`} alt="weather-icon"/>
     </div>);
 
   return (
