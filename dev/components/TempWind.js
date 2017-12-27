@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { convertToFahrenheit, convertToCelsius, getDate, getTime } from '../helpers/utils';
-const isDev = process.env.NODE_ENV == 'dev'
+const isDev = process.env.NODE_ENV !== 'production'
 
 export const TempWind = ({info, temp}) => {
   const night = getTime(info.dt) > 8 && getTime(info.dt) < 18;

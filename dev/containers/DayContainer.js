@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { DayItem } from '../components/DayItem';
-const isDev = process.env.NODE_ENV == 'dev'
+import { Loader } from '../components/Loader';
 
 
 export class DayContainer extends React.Component {
@@ -18,12 +18,11 @@ export class DayContainer extends React.Component {
     })
   }
 
-
   render() {
     return (
       <div>
         {this.state.isLoading ?
-        <div className="loader"><img  src={isDev ? 'https://weather.skepton.ru/images/Loading.gif' : `/images/Loading.gif`} alt="Loading"/></div>
+        <Loader/>
         : <DayItem {...this.props}/>}
       </div>
     )

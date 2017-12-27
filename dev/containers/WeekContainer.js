@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { WeekContent } from '../components/WeekContent';
-const isDev = process.env.NODE_ENV == 'dev'
+import { Loader } from '../components/Loader';
 
 
 export class WeekContainer extends React.Component {
@@ -22,7 +22,7 @@ export class WeekContainer extends React.Component {
     return (
       <div>
       {this.state.isLoading ?
-        <div className="loader"><img  src={isDev ? 'https://weather.skepton.ru/images/Loading.gif' : `/images/Loading.gif`} alt="Loading"/></div>
+        <Loader/>
         : <WeekContent {...this.props}/>}
       </div>
     )

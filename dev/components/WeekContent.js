@@ -1,3 +1,4 @@
+
 import React from 'react';
 import PropTypes from 'prop-types';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
@@ -6,7 +7,7 @@ import darkBaseTheme from 'material-ui/styles/baseThemes/darkBaseTheme'
 import Paper from 'material-ui/Paper';
 import { getTime } from '../helpers/utils';
 import { TempWind } from './TempWind';
-const isDev = process.env.NODE_ENV == 'dev'
+import { WeatherIcon } from './WeatherIcon';
 
 
 export const WeekContent = ({data, temp}) => {
@@ -22,7 +23,7 @@ export const WeekContent = ({data, temp}) => {
                 <TempWind info={item} temp={temp}/>
                 {item.weather.map(x => <div key={x.id} className="item-description">
                     <p>{x.description}</p>
-                    <img  className="weather-icon" src={isDev ? `https://weather.skepton.ru/images/weather-icons/${x.icon}.svg` : `/images/weather-icons/${x.icon}.svg`} alt="weather-icon"/>
+                    <WeatherIcon info={x}/>
                   </div>)}        
               </Paper>
             </MuiThemeProvider>
