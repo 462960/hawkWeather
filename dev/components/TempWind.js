@@ -4,8 +4,8 @@ import { convertToFahrenheit, convertToCelsius, getDate, getTime } from '../help
 const isDev = process.env.NODE_ENV !== 'production'
 
 export const TempWind = ({info, temp}) => {
-  const night = getTime(info.dt) > 8 && getTime(info.dt) < 18;
-  const arrowColor = night ? "black" : "white";
+  const dayLight = getTime(info.dt) > 8 && getTime(info.dt) < 18;
+  const arrowColor = dayLight ? "black" : "white";
   const windDirection = info.wind.deg;
   const divStyle = {
     background: isDev ? `url(https://weather.skepton.ru/images/arrow-${arrowColor}.png)` : `url(/images/arrow-${arrowColor}.png)`,

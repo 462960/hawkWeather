@@ -7,22 +7,15 @@ import { Switchers } from '../components/Switchers';
 
 export class SwitchersContainer extends React.Component {
 
-  constructor(props) {
-    super(props);
-    this.handleTemp = this.handleTemp.bind(this);
-    this.handlePeriod = this.handlePeriod.bind(this);
-  }
-
-  handleTemp(e, i, temp) {
+  handleTemp = (e, i, temp) => {
     e.preventDefault();
     this.props.switchTemp(temp);
   }
 
-  handlePeriod(e, i, period) {
+  handlePeriod = (e, i, period) => {
     e.preventDefault();
     this.props.variantData(period);
   }
-  ;
 
   render() {
     return <Switchers

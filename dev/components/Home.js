@@ -11,9 +11,6 @@ import { ErrorAlert } from './ErrorAlert';
 
 
 export class Home extends React.Component {
-  constructor(props) {
-    super(props);
-  }
 
   render() {
     return (

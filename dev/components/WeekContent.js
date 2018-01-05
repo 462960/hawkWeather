@@ -13,11 +13,11 @@ import { WeatherIcon } from './WeatherIcon';
 export const WeekContent = ({data, temp}) => {
 
   const weatherSlice = data.list.map(item => {
-    const night = getTime(item.dt) > 8 && getTime(item.dt) < 18;
+    const dayLight = getTime(item.dt) > 8 && getTime(item.dt) < 18;
 
     return (
       <div key={item.dt} className="week-content-item">
-            <MuiThemeProvider muiTheme={getMuiTheme(night ? 'null' : darkBaseTheme)}>
+            <MuiThemeProvider muiTheme={getMuiTheme(dayLight || darkBaseTheme)}>
               <Paper zDepth={2}>
                 <h6>{item.dt_txt}</h6>
                 <TempWind info={item} temp={temp}/>
