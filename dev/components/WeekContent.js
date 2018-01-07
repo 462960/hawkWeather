@@ -5,7 +5,7 @@ import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
 import darkBaseTheme from 'material-ui/styles/baseThemes/darkBaseTheme'
 import Paper from 'material-ui/Paper';
-import { getTime } from '../helpers/utils';
+import { getTime } from 'Helpers/utils';
 import { TempWind } from './TempWind';
 import { WeatherIcon } from './WeatherIcon';
 
@@ -13,7 +13,7 @@ import { WeatherIcon } from './WeatherIcon';
 export const WeekContent = ({data, temp}) => {
 
   const weatherSlice = data.list.map(item => {
-    const dayLight = getTime(item.dt) > 8 && getTime(item.dt) < 18;
+    const dayLight = getTime(item.dt) >= 8 && getTime(item.dt) < 18;
 
     return (
       <div key={item.dt} className="week-content-item">

@@ -1,5 +1,5 @@
 
-import { REMOVE_CHIP, LOAD_DATA_REQUEST, SWITCH_FORECAST_LENGTH, SWITCH_TEMP } from '../helpers/constants';
+import { REMOVE_CHIP, LOAD_DATA_REQUEST, SWITCH_FORECAST_LENGTH, SWITCH_TEMP } from 'Helpers/constants';
 
 export function removeChip(chips, i) {
   return {

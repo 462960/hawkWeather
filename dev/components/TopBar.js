@@ -6,7 +6,7 @@ import IconButton from 'material-ui/IconButton';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
 import darkBaseTheme from 'material-ui/styles/baseThemes/darkBaseTheme'
-import { GitHubIcon } from '../helpers/GitHubIcon';
+import { GitHubIcon } from './GitHubIcon';
 
 export const TopBar = () => {
   return (

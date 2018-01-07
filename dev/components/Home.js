@@ -1,35 +1,27 @@
 import React from 'react';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
-import { SwitchersContainer } from '../containers/SwitchersContainer';
-import { CityInputContainer } from '../containers/CityInputContainer';
-import { ChippoContainer } from '../containers/ChippoContainer';
-import { PresentContainer } from '../containers/PresentContainer';
+import { SwitchersContainer } from 'Containers/SwitchersContainer';
+import { CityInputContainer } from 'Containers/CityInputContainer';
+import { ChippoContainer } from 'Containers/ChippoContainer';
+import { PresentContainer } from 'Containers/PresentContainer';
 import { ErrorBoundary } from './ErrorBoundary';
 import { TopBar } from './TopBar';
 import { ErrorAlert } from './ErrorAlert';
 
 
 
-export class Home extends React.Component {
-
-  render() {
-    return (
-      <div className="wrapper">
+export const Home = (props) => <div className="wrapper">
       <ErrorBoundary>
         <TopBar/>
-        <ErrorAlert error = {this.props.error}/>
+        <ErrorAlert error = {props.error}/>
         <div className="controls-wrapper">
           <div className="inputs-wrapper">
-            <SwitchersContainer {...this.props}/>
-            <CityInputContainer {...this.props}/>
+            <SwitchersContainer {...props}/>
+            <CityInputContainer {...props}/>
           </div>
-          <ChippoContainer {...this.props}/>
+          <ChippoContainer {...props}/>
         </div>
-         <PresentContainer {...this.props}/>
+         <PresentContainer {...props}/>
       </ErrorBoundary>
     </div>
-    )
-  }
-}
-
 

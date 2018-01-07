@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { convertToFahrenheit, convertToCelsius, getDate, getTime } from '../helpers/utils';
+import { convertToFahrenheit, convertToCelsius, getDate, getTime } from 'Helpers/utils';
 const isDev = process.env.NODE_ENV !== 'production'
 
 export const TempWind = ({info, temp}) => {

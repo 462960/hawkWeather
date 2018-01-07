@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { DayContainer } from '../containers/DayContainer';
-import { WeekContainer } from '../containers/WeekContainer';
+import { DayContainer } from './DayContainer';
+import { WeekContainer } from './WeekContainer';
 
 
 export const PresentContainer = (props) => <div>

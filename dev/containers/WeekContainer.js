@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { WeekContent } from '../components/WeekContent';
-import { Loader } from '../components/Loader';
+import { WeekContent } from 'Components/WeekContent';
+import { Loader } from 'Components/Loader';
 
 
 export class WeekContainer extends React.Component {

@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import DropDownMenu from 'material-ui/DropDownMenu';
 import MenuItem from 'material-ui/MenuItem';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
-import { Switchers } from '../components/Switchers';
+import { Switchers } from 'Components/Switchers';
 
 export class SwitchersContainer extends React.Component {
 

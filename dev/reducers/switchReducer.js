@@ -1,5 +1,5 @@
 
-import { SWITCH_FORECAST_LENGTH } from '../helpers/constants';
+import { SWITCH_FORECAST_LENGTH } from 'Helpers/constants';
 
 
 export const switchReducer = (state = 'weather', action) => {

@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { CityInput } from '../components/CityInput';
+import { CityInput } from 'Components/CityInput';
 
 
 export class CityInputContainer extends React.Component {

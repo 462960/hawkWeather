@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
-import { Chippo } from '../components/Chippo';
+import { Chippo } from 'Components/Chippo';
 
 
 export const ChippoContainer = (props) => {

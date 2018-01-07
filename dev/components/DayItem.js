@@ -1,9 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+import darkBaseTheme from 'material-ui/styles/baseThemes/darkBaseTheme'
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
 import Paper from 'material-ui/Paper';
-import { getDate, getTime } from '../helpers/utils';
+import { getDate, getTime } from 'Helpers/utils';
 import { TempWind } from './TempWind';
 import { WeatherIcon } from './WeatherIcon';
 
@@ -13,7 +14,7 @@ export const DayItem = ({data, temp}) => {
     <p>{item.description}</p>
     <WeatherIcon info={item}/>
     </div>);
-  const dayLight = getTime(data.dt) > 8 && getTime(data.dt) < 18;
+  const dayLight = getTime(data.dt) >= 8 && getTime(data.dt) < 18;
 
   return (
     <div className="day-item">

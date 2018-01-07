@@ -3,6 +3,7 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const HTMLwebpackPlugin = require('html-webpack-plugin');
 const UglyJS = require('uglify-js-plugin');
 const Dotenv = require('dotenv-webpack');
+const path = require('path');
 const webpack = require('webpack');
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
@@ -54,7 +55,12 @@ const config = {
     new webpack.optimize.ModuleConcatenationPlugin()
   ],
   resolve: {
-    extensions: ['.js', '.jsx', '.css', '.scss']
+    extensions: ['.js', '.jsx', '.css', '.scss'],
+    alias: {
+      Components: path.resolve(__dirname, 'dev/components/'),
+      Containers: path.resolve(__dirname, 'dev/containers/'),
+      Helpers: path.resolve(__dirname, 'dev/helpers/')
+    }
   }
 };
 

@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { DayItem } from '../components/DayItem';
-import { Loader } from '../components/Loader';
+import { DayItem } from 'Components/DayItem';
+import { Loader } from 'Components/Loader';
 
 
 export class DayContainer extends React.Component {

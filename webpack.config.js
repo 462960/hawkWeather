@@ -46,8 +46,14 @@ const config = {
     })
   ],
   resolve: {
-    extensions: ['.js', '.jsx', '.css', '.scss']
+    extensions: ['.js', '.jsx', '.css', '.scss'],
+    alias: {
+      Components: path.resolve(__dirname, 'dev/components/'),
+      Containers: path.resolve(__dirname, 'dev/containers/'),
+      Helpers: path.resolve(__dirname, 'dev/helpers/')
+    }
   },
+
   devServer: {
     compress: false,
     port: 9909
