@@ -4,6 +4,19 @@ import DropDownMenu from 'material-ui/DropDownMenu';
 import MenuItem from 'material-ui/MenuItem';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import { Switchers } from 'Components/Switchers';
+//import { connect } from 'react-redux';
+//import { switchTemp, varia} as actionCreators from '../action/actionCreators';
+
+// function mapStateToProps(state){
+//   return {
+
+//   }
+
+// }
+
+// function mapDispatchToProps(dispatch){
+
+// }
 
 export class SwitchersContainer extends React.Component {
 

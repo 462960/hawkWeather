@@ -7,7 +7,6 @@ function mapStateToProps(state) {
   return {
     chips: state.chipsReducer,
     data: state.dataReducer,
-    error: state.errorReducer,
     variant: state.switchReducer,
     temp: state.tempReducer
   }

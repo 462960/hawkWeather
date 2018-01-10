@@ -6,14 +6,14 @@ import { ChippoContainer } from 'Containers/ChippoContainer';
 import { PresentContainer } from 'Containers/PresentContainer';
 import { ErrorBoundary } from './ErrorBoundary';
 import { TopBar } from './TopBar';
-import { ErrorAlert } from './ErrorAlert';
+import ErrorAlert from './ErrorAlert';
 
 
 
 export const Home = (props) => <div className="wrapper">
       <ErrorBoundary>
         <TopBar/>
-        <ErrorAlert error = {props.error}/>
+        <ErrorAlert/>
         <div className="controls-wrapper">
           <div className="inputs-wrapper">
             <SwitchersContainer {...props}/>

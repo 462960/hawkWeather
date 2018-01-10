@@ -3,9 +3,16 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Dialog from 'material-ui/Dialog';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+import { connect } from 'react-redux';
+
+function mapStateToProps(state) {
+  return {
+    error: state.errorReducer
+  }
+}
 
 
-export const ErrorAlert = ({error}) => <MuiThemeProvider>
+const ErrorAlert = ({error}) => <MuiThemeProvider>
           <Dialog
   open={error}
   >
@@ -14,9 +21,11 @@ export const ErrorAlert = ({error}) => <MuiThemeProvider>
           </Dialog>
         </MuiThemeProvider>
 
+export default connect(mapStateToProps)(ErrorAlert);
+
 
 ErrorAlert.propTypes = {
-  error: PropTypes.bool
+  error: PropTypes.bool.isRequired
 }
 
 
