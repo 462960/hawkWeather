@@ -1,5 +1,5 @@
 
-import { LOAD_DATA_ERROR } from 'Helpers/constants';
+import { LOAD_DATA_ERROR } from 'Action/constants';
 
 export const errorReducer = (state = false, action) => {
   switch (action.type) {

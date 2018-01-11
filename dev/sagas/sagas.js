@@ -3,7 +3,7 @@ import { getForecastByName, getForecastByCoords } from 'Helpers/api';
 import { put, call, all, select, take } from 'redux-saga/effects'
 import { takeLatest, delay } from 'redux-saga';
 import { v4 } from 'node-uuid';
-import { LOAD_DATA_SUCCESS, LOAD_DATA_REQUEST, ADD_CHIP, LOAD_DATA_ERROR, SWITCH_FORECAST_LENGTH } from 'Helpers/constants';
+import { LOAD_DATA_SUCCESS, LOAD_DATA_REQUEST, ADD_CHIP, LOAD_DATA_ERROR, SWITCH_FORECAST_LENGTH } from 'Action/constants';
 
 function* loadDataDetails({period, city}) {
   const getChips = state => state.chipsReducer;

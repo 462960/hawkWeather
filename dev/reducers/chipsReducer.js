@@ -1,5 +1,5 @@
 
-import { ADD_CHIP, REMOVE_CHIP } from 'Helpers/constants';
+import { ADD_CHIP, REMOVE_CHIP } from 'Action/constants';
 
 export function chipsReducer(state = [], action) {
   switch (action.type) {

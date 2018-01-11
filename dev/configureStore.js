@@ -2,8 +2,7 @@ import { createStore, applyMiddleware } from 'redux';
 import { rootReducer } from './reducers/rootReducer';
 import createSagaMiddleware from 'redux-saga';
 import { rootSaga } from './sagas/sagas';
-import { loadState } from './helpers/localStorage';
-import { saveState } from './helpers/localStorage';
+import { loadState, saveState } from 'Helpers/localStorage';
 import throttle from 'lodash/throttle';
 
 export const configureStore = () => {

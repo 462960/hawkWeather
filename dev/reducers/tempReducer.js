@@ -1,5 +1,5 @@
 
-import { SWITCH_TEMP } from 'Helpers/constants';
+import { SWITCH_TEMP } from 'Action/constants';
 
 export const tempReducer = (state = "C", action) => {
   switch (action.type) {

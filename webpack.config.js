@@ -50,7 +50,8 @@ const config = {
     alias: {
       Components: path.resolve(__dirname, 'dev/components/'),
       Containers: path.resolve(__dirname, 'dev/containers/'),
-      Helpers: path.resolve(__dirname, 'dev/helpers/')
+      Helpers: path.resolve(__dirname, 'dev/helpers/'),
+      Action: path.resolve(__dirname, 'dev/action/')
     }
   },
 

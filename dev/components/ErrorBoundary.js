@@ -1,5 +1,4 @@
-import React from 'react';
-
+import React from "react";
 
 export class ErrorBoundary extends React.Component {
   constructor(props) {
@@ -24,11 +23,11 @@ export class ErrorBoundary extends React.Component {
       return (
         <div>
           <h2>{"Oh-no! Something went wrong"}</h2>
-          <p style={{color: 'red'}}>
+          <p style={{ color: "red" }}>
             {this.state.error && this.state.error.toString()}
           </p>
           <div>{"Component Stack Error Details: "}</div>
-          <p style={{color: 'red'}}>{this.state.errorInfo.componentStack}</p>
+          <p style={{ color: "red" }}>{this.state.errorInfo.componentStack}</p>
         </div>
       );
     }
