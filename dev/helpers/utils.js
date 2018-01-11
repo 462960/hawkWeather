@@ -25,7 +25,7 @@ const monthsMap = {
 
 // Kelvin to Fahrenheit
 export function convertToFahrenheit(kelvin) {
-  return ((kelvin - 273.15) * 1.8000 + 32.00).toFixed(1);
+  return ((kelvin - 273.15) * 1.8 + 32.0).toFixed(1);
 }
 
 // Kelvin to Celsius
@@ -33,18 +33,17 @@ export function convertToCelsius(kelvin) {
   return (kelvin - 273.15).toFixed(1);
 }
 
-// Get the date out of Unix time stamp 
+// Gets the date out of Unix time stamp
 export function getDate(unixTimestamp) {
   let date = new Date(unixTimestamp * 1000);
   let day = daysMap[date.getDay()];
   let month = `${monthsMap[date.getMonth()]},${date.getDate()}`;
-  return `${day} ${month}`
+  return `${day} ${month}`;
 }
 
+// Gets the time out of Unix time stamp
 export function getTime(unixTimestamp) {
   const date = new Date(unixTimestamp * 1000);
   const hours = date.getHours();
   return hours;
 }
-
-

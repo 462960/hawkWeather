@@ -30,6 +30,7 @@ export const WeekContent = ({ data, temp }) => {
       </div>
     );
   });
+  
   return (
     <div className="week-content-wrapper">
       <h4>

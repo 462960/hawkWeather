@@ -10,9 +10,12 @@ const URL = "https://weather.skepton.ru/images/arrow-";
 const isDev = process.env.NODE_ENV !== "production";
 
 export const TempWind = ({ info, temp }) => {
-  const dayLight = getTime(info.dt) > 8 && getTime(info.dt) < 18;
+  // Changes dark/white arow according to night/day time
+  const dayLight = getTime(info.dt) >= 8 && getTime(info.dt) < 18;
   const arrowColor = dayLight ? "black" : "white";
+  // Changes arrow direction
   const windDirection = info.wind.deg;
+
   const divStyle = {
     background: isDev
       ? `url(${URL}${arrowColor}.png)`
@@ -23,6 +26,7 @@ export const TempWind = ({ info, temp }) => {
     height: 50,
     width: 50
   };
+  
   return (
     <div className="temp-wind-wrapper">
       <div className="temp-holder">
