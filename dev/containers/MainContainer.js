@@ -1,15 +1,32 @@
 import React from "react";
-import { TopBar } from "./TopBar";
 import PropTypes from "prop-types";
-import { ErrorAlert } from "./ErrorAlert";
-import { ErrorBoundary } from "./ErrorBoundary";
-import { DayOrWeekSwitcher } from "./DayOrWeekSwitcher";
+import { connect } from "react-redux";
+import { bindActionCreators } from "redux";
+import { TopBar } from "Components/TopBar";
+import { ErrorAlert } from "Components/ErrorAlert";
+import * as actionCreators from "Action/actionCreators";
+import { ErrorBoundary } from "Components/ErrorBoundary";
+import { SwitchersContainer } from "./SwitchersContainer";
+import { CityInputContainer } from "./CityInputContainer";
+import { ChipContainerWrapper } from "./ChipContainerWrapper";
+import { DayOrWeekSwitcher } from "Components/DayOrWeekSwitcher";
 import MuiThemeProvider from "material-ui/styles/MuiThemeProvider";
-import { SwitchersContainer } from "Containers/SwitchersContainer";
-import { CityInputContainer } from "Containers/CityInputContainer";
-import { ChipContainerWrapper } from "Containers/ChipContainerWrapper";
 
-export const Home = props => (
+function mapStateToProps(state) {
+	return {
+		data: state.dataReducer,
+		temp: state.tempReducer,
+		error: state.errorReducer,
+		chips: state.chipsReducer,
+		variant: state.switchReducer		
+	};
+}
+
+function mapDispatchToProps(dispatch) {
+	return bindActionCreators(actionCreators, dispatch);
+}
+
+const MainContainer = props => (
 	<div className="wrapper">
 		<ErrorBoundary>
 			<TopBar />
@@ -43,7 +60,9 @@ export const Home = props => (
 	</div>
 );
 
-Home.propTypes = {
+export default connect(mapStateToProps, mapDispatchToProps)(MainContainer);
+
+MainContainer.propTypes = {
 	error: PropTypes.bool.isRequired,
 	data: PropTypes.object.isRequired,
 	temp: PropTypes.string.isRequired,

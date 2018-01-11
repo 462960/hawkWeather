@@ -3,13 +3,13 @@ import ReactDOM from "react-dom";
 require("./sass/styles");
 import { Provider } from "react-redux";
 import { configureStore } from "./configureStore";
-import App from "Components/App";
+import MainContainer from "Containers/MainContainer";
 
 const store = configureStore();
 
 const wrap = (
 	<Provider store={store}>
-		<App />
+		<MainContainer />
 	</Provider>
 );
 
