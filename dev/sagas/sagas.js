@@ -13,6 +13,7 @@ import {
 function* loadDataDetails({ period, city }) {
   const getChips = state => state.chipsReducer;
   const getVariant = state => state.switchReducer;
+
   try {
     const data = yield call(getForecastByName, period, city);
     const chipSet = yield select(getChips);
@@ -37,6 +38,7 @@ function* loadDataDetails({ period, city }) {
           lat: dataSet.lat,
           lon: dataSet.lon
         });
+
   } catch (error) {
     const failed = error && true;
     yield put({
@@ -53,6 +55,7 @@ function* loadDataDetails({ period, city }) {
 
 function* lengthDataReload() {
   const getExistingCity = state => state.dataReducer;
+
   try {
     while (true) {
       const variantDispatch = yield take(SWITCH_FORECAST_LENGTH);
@@ -69,6 +72,7 @@ function* lengthDataReload() {
         data
       });
     }
+    
   } catch (error) {
     const failed = error && true;
     yield put({

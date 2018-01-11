@@ -41,9 +41,11 @@ export function getDate(unixTimestamp) {
   return `${day} ${month}`;
 }
 
-// Gets the time out of Unix time stamp
-export function getTime(unixTimestamp) {
+// Gets the day light time out of Unix time stamp
+export function dayLight(unixTimestamp) {
   const date = new Date(unixTimestamp * 1000);
-  const hours = date.getHours();
-  return hours;
+  const time = date.getHours();
+  return time >=8 && time < 18;
 }
+
+

@@ -4,15 +4,14 @@ import {
   convertToFahrenheit,
   convertToCelsius,
   getDate,
-  getTime
+  dayLight
 } from "Helpers/utils";
 const URL = "https://weather.skepton.ru/images/arrow-";
 const isDev = process.env.NODE_ENV !== "production";
 
 export const TempWind = ({ info, temp }) => {
   // Changes dark/white arow according to night/day time
-  const dayLight = getTime(info.dt) >= 8 && getTime(info.dt) < 18;
-  const arrowColor = dayLight ? "black" : "white";
+  const arrowColor = dayLight(info.dt) ? "black" : "white";
   // Changes arrow direction
   const windDirection = info.wind.deg;
 

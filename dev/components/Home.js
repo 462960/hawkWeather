@@ -3,7 +3,7 @@ import { TopBar } from "./TopBar";
 import PropTypes from "prop-types";
 import { ErrorAlert } from "./ErrorAlert";
 import { ErrorBoundary } from "./ErrorBoundary";
-import { PresentContainer } from "Containers/PresentContainer";
+import { DayOrWeekSwitcher } from "./DayOrWeekSwitcher";
 import MuiThemeProvider from "material-ui/styles/MuiThemeProvider";
 import { SwitchersContainer } from "Containers/SwitchersContainer";
 import { CityInputContainer } from "Containers/CityInputContainer";
@@ -34,7 +34,7 @@ export const Home = props => (
 					chips={props.chips}
 				/>
 			</div>
-			<PresentContainer
+			<DayOrWeekSwitcher
 				data={props.data}
 				temp={props.temp}
 				variant={props.variant}

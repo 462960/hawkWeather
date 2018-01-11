@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import { WeekContent } from 'Components/WeekContent';
 import { Loader } from 'Components/Loader';
 
-
 export class WeekContainer extends React.Component {
   constructor(props) {
     super(props);

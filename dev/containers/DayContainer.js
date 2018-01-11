@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import { DayItem } from 'Components/DayItem';
 import { Loader } from 'Components/Loader';
 
-
 export class DayContainer extends React.Component {
   constructor(props) {
     super(props);
