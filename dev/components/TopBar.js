@@ -11,15 +11,15 @@ import darkBaseTheme from "material-ui/styles/baseThemes/darkBaseTheme";
 const linkGitHub = "https://github.com/462960/hawkWeather";
 
 export const TopBar = () => (
-	<MuiThemeProvider muiTheme={getMuiTheme(darkBaseTheme)}>
-		<AppBar
-			title="Weather App"
-			iconElementRight={<IconButton />}
-			iconElementLeft={
-				<IconButton href={linkGitHub} target="blank">
-					<GitHubIcon />
-				</IconButton>
-			}
-		/>
-	</MuiThemeProvider>
+  <MuiThemeProvider muiTheme={getMuiTheme(darkBaseTheme)}>
+    <AppBar
+      title="Weather App"
+      iconElementRight={<IconButton />}
+      iconElementLeft={
+        <IconButton href={linkGitHub} target="blank">
+          <GitHubIcon />
+        </IconButton>
+      }
+    />
+  </MuiThemeProvider>
 );

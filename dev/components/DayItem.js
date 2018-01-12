@@ -18,7 +18,9 @@ export const DayItem = ({ data, temp }) => {
 
   return (
     <div className="day-item">
-      <MuiThemeProvider muiTheme={getMuiTheme(dayLight(data.dt) || darkBaseTheme)}>
+      <MuiThemeProvider
+        muiTheme={getMuiTheme(dayLight(data.dt) || darkBaseTheme)}
+      >
         <Paper zDepth={2}>
           <h4>
             {data.name}, {data.sys.country}

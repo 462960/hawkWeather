@@ -38,7 +38,6 @@ function* loadDataDetails({ period, city }) {
           lat: dataSet.lat,
           lon: dataSet.lon
         });
-
   } catch (error) {
     const failed = error && true;
     yield put({
@@ -72,7 +71,6 @@ function* lengthDataReload() {
         data
       });
     }
-    
   } catch (error) {
     const failed = error && true;
     yield put({

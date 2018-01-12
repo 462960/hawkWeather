@@ -1,4 +1,3 @@
-
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
 const HTMLwebpackPlugin = require("html-webpack-plugin");
 const UglyJS = require("uglify-js-plugin");

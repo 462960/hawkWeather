@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { ChipContainer } from "./ChipContainer";
+import { ChipContainer } from "Containers/ChipContainer";
 import ReactCSSTransitionGroup from "react-addons-css-transition-group";
 
 export const ChipContainerWrapper = props => {

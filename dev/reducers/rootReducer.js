@@ -6,9 +6,9 @@ import { switchReducer } from "./switchReducer";
 import { tempReducer } from "./tempReducer";
 
 export const rootReducer = combineReducers({
-	chipsReducer,
-	dataReducer,
-	errorReducer,
-	switchReducer,
-	tempReducer
+  chipsReducer,
+  dataReducer,
+  errorReducer,
+  switchReducer,
+  tempReducer
 });

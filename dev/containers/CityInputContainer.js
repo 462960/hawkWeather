@@ -3,6 +3,10 @@ import PropTypes from "prop-types";
 import { CityInput } from "Components/CityInput";
 
 export class CityInputContainer extends React.Component {
+  componentDidMount() {
+    this.focusForm.focus();
+  }
+
   cityName = e => {
     this.setState({
       city: e.target.value
@@ -21,6 +25,7 @@ export class CityInputContainer extends React.Component {
         <CityInput
           cityName={this.cityName}
           resetRef={el => (this.resetForm = el)}
+          focusRef={el => (this.focusForm = el)}
           submitName={this.submitName}
         />
       </div>

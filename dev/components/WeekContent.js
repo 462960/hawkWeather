@@ -10,10 +10,11 @@ import darkBaseTheme from "material-ui/styles/baseThemes/darkBaseTheme";
 
 export const WeekContent = ({ data, temp }) => {
   const weatherSlice = data.list.map(item => {
-
     return (
       <div key={item.dt} className="week-content-item">
-        <MuiThemeProvider muiTheme={getMuiTheme(dayLight(item.dt) || darkBaseTheme)}>
+        <MuiThemeProvider
+          muiTheme={getMuiTheme(dayLight(item.dt) || darkBaseTheme)}
+        >
           <Paper zDepth={2}>
             <h6>{item.dt_txt}</h6>
             <TempWind info={item} temp={temp} />
@@ -28,7 +29,7 @@ export const WeekContent = ({ data, temp }) => {
       </div>
     );
   });
-  
+
   return (
     <div className="week-content-wrapper">
       <h4>

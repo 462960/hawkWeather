@@ -45,7 +45,5 @@ export function getDate(unixTimestamp) {
 export function dayLight(unixTimestamp) {
   const date = new Date(unixTimestamp * 1000);
   const time = date.getHours();
-  return time >=8 && time < 18;
+  return time >= 8 && time < 18;
 }
-
-

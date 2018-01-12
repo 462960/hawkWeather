@@ -6,8 +6,8 @@ import {
   getDate,
   dayLight
 } from "Helpers/utils";
-const URL = "https://weather.skepton.ru/images/arrow-";
-const isDev = process.env.NODE_ENV !== "production";
+const imgPath = "/images/arrow-";
+const isProd = process.env.NODE_ENV == "production";
 
 export const TempWind = ({ info, temp }) => {
   // Changes dark/white arow according to night/day time
@@ -16,16 +16,16 @@ export const TempWind = ({ info, temp }) => {
   const windDirection = info.wind.deg;
 
   const divStyle = {
-    background: isDev
-      ? `url(${URL}${arrowColor}.png)`
-      : `url(/images/arrow-${arrowColor}.png)`,
+    background: isProd
+      ? `url(${imgPath}${arrowColor}.png)`
+      : `url(/dev${imgPath}${arrowColor}.png)`,
     transform: `rotate(${windDirection}deg)`,
     borderRadius: "50%",
     marginLeft: 20,
     height: 50,
     width: 50
   };
-  
+
   return (
     <div className="temp-wind-wrapper">
       <div className="temp-holder">
