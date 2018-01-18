@@ -38,7 +38,7 @@ const config = {
       inject: true
     }),
     new Dotenv({
-      path: "./.env"
+      path: "./dev/helpers/.env_dev"
     })
   ],
   resolve: {

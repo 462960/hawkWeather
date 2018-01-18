@@ -45,7 +45,7 @@ const config = {
       analyzerMode: "static"
     }),
     new Dotenv({
-      path: "./.env"
+      path: "./dev/helpers/.env_prod"
     }),
     new webpack.optimize.ModuleConcatenationPlugin()
   ],

@@ -111,20 +111,25 @@ $bp-desktop: 850px;
     width: 50%;
     border-right: 1px solid #e4eaeb;
     padding-right: 20px;
+
     & > div {
       overflow: hidden;
       padding-bottom: 5px;
+
       div {
         float: left;
       }
+
       span {
         float: right;
       }
     }
   }
+
   .wind-holder {
     float: right;
     width: 100px;
+
     div {
       text-align: center;
     }
@@ -133,6 +138,7 @@ $bp-desktop: 850px;
 
 /* WeekContainer styles */
 .week-content-wrapper {
+
   h4 {
     text-align: center;
   }
@@ -140,9 +146,11 @@ $bp-desktop: 850px;
   width: 95%;
   padding: 10px;
   margin: 0 auto;
+
   @media (min-width: $bp-tablet) {
     width: 85%;
   }
+  
   .week-content-item {
     margin-bottom: 10px;
     & > div {

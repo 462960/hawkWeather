@@ -8,9 +8,8 @@ export async function getForecastByName(variant, city) {
     const response = await axios.get(
       `${_baseURL}${variant}?q=${city}&appid=${_APIKEY}`
     );
-    const result = await response.data;
-    return result;
-  } catch (e) {
+    return response.data;
+  } catch (err) {
     console.log("Error:", err);
   }
 }
@@ -20,9 +19,8 @@ export async function getForecastByCoords(lat, lon) {
     const response = await axios.get(
       `${_baseURL}weather?lat=${lat}&lon=${lon}&appid=${_APIKEY}`
     );
-    const result = await response.data;
-    return result;
-  } catch (e) {
+    return response.data;
+  } catch (err) {
     console.log("Error:", err);
   }
 }
