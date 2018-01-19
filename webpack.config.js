@@ -1,7 +1,7 @@
-const ExtractTextPlugin = require("extract-text-webpack-plugin");
-const HTMLwebpackPlugin = require("html-webpack-plugin");
 const path = require("path");
 const Dotenv = require("dotenv-webpack");
+const HTMLwebpackPlugin = require("html-webpack-plugin");
+const ExtractTextPlugin = require("extract-text-webpack-plugin");
 
 const config = {
   entry: ["babel-polyfill", __dirname + "/dev/index.js"],

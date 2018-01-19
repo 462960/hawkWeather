@@ -1,9 +1,9 @@
-const ExtractTextPlugin = require("extract-text-webpack-plugin");
-const HTMLwebpackPlugin = require("html-webpack-plugin");
-const UglyJS = require("uglify-js-plugin");
-const Dotenv = require("dotenv-webpack");
 const path = require("path");
 const webpack = require("webpack");
+const Dotenv = require("dotenv-webpack");
+const UglyJS = require("uglifyjs-webpack-plugin");
+const HTMLwebpackPlugin = require("html-webpack-plugin");
+const ExtractTextPlugin = require("extract-text-webpack-plugin");
 const BundleAnalyzerPlugin = require("webpack-bundle-analyzer")
   .BundleAnalyzerPlugin;
 
@@ -13,8 +13,6 @@ const config = {
     path: __dirname + "/dist",
     filename: "bundle.js"
   },
-  devtool: "source-map",
-
   module: {
     rules: [
       {
@@ -34,13 +32,7 @@ const config = {
       template: "./dev/index.template.html",
       inject: true
     }),
-    new UglyJS({
-      compress: {
-        warnings: true
-      },
-      debug: true,
-      sourceMap: true // or false. True is not default for WP2
-    }),
+    new UglyJS({ sourceMap: true }),
     new BundleAnalyzerPlugin({
       analyzerMode: "static"
     }),
