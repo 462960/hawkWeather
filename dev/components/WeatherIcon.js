@@ -10,4 +10,4 @@ export const WeatherIcon = ({ info }) => (
     }
     alt="weather-icon"
   />
-);hgh
+);
