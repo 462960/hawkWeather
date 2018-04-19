@@ -53,6 +53,7 @@ const config = {
 
   devServer: {
     compress: false,
+    contentBase: './dev',
     port: 9909
   }
 };
