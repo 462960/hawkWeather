@@ -27,4 +27,4 @@ ChipContainerWrapper.propTypes = {
   getData: PropTypes.func.isRequired,
   removeChip: PropTypes.func.isRequired
 };
-ор
+орыв
