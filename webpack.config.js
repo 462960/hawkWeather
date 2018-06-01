@@ -4,7 +4,7 @@ const HTMLwebpackPlugin = require("html-webpack-plugin");
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
 
 const config = {
-  entry: ["babel-polyfill", __dirname + "/dev/index.js"], jhkj
+  entry: ["babel-polyfill", __dirname + "/dev/index.js"],
   output: {
     path: __dirname + "/dist",
     filename: "bundle.js"
