@@ -8,7 +8,7 @@ const BundleAnalyzerPlugin = require("webpack-bundle-analyzer")
   .BundleAnalyzerPlugin;
 
 const config = {
-  entry: ["babel-polyfill", __dirname + "/dev/index.js"], hgjh
+  entry: ["babel-polyfill", __dirname + "/dev/index.js"], hgjhjh
   output: {
     path: __dirname + "/dist",
     filename: "bundle.js"
