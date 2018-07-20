@@ -23,4 +23,4 @@ export async function getForecastByCoords(lat, lon) {
   } catch (err) {
     console.log("Error:", err);
   }
-}
+}cv
