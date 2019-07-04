@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "start": "webpack-dev-server --inline --hot --history-api-fallback --open",
-    "prod": "webpack --config webpack.config.prod.js -p"
+    "prod": "webpack --config webpack.config.prod.js -p",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
   },
   "repository": {
     "type": "git",
@@ -49,6 +51,8 @@
     "react": "^16.2.0",
     "react-addons-css-transition-group": "^15.6.2",
     "react-dom": "^16.1.0",
-    "redux-saga": "^0.16.0"
-  }
+    "redux-saga": "^0.16.0",
+    "snyk": "^1.189.0"
+  },
+  "snyk": true
 }
